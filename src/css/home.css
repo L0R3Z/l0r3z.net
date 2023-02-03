@@ -1,0 +1,63 @@
+html {
+    font-family: ms pgothic;
+}
+
+body {
+    overflow: hidden;
+    background-color:aliceblue;
+    background-image: url(https://media.discordapp.net/attachments/680782394479214619/1070886107929124884/image.png);
+
+    /* Pour quand il faut pas repeat le bg */
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.global {
+    width: 800px;
+    margin: auto;
+}
+
+.margintop {
+    margin-top: 10px;
+}
+
+.box {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.63);
+    /* cool pink chunky border */
+    /* border-width: 10px;
+    border-image: url('https://cdn140.picsart.com/322698437144201.png') 1100 round; */
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header__box {
+    height: 80px;
+    background-image: url('https://media.discordapp.net/attachments/680782394479214619/1070899844241170473/sdqsd.png');;
+    /* border-width: 5px;
+    border-radius: 0;
+    border-image: url('https://64.media.tumblr.com/3c541d7ee43b416e53c2915285e3a8c4/7640d3881508b2f9-b9/s640x960/8e1a1d51d0ea2b7a16a47ebf06ad402f011e2110.gif') 20; */
+}
+
+.header__box__h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.mainmenu {}
+
+.main {}
+
+.footer {}
+
+.webring {
+    display: flex;
+    justify-content: space-between;
+}
