@@ -4,7 +4,7 @@ html {
 
 body {
     overflow: hidden;
-    background-color:aliceblue;
+    background-color: aliceblue;
     background-image: url(https://media.discordapp.net/attachments/680782394479214619/1070886107929124884/image.png);
 
     /* Pour quand il faut pas repeat le bg */
@@ -40,7 +40,8 @@ body {
 
 .header__box {
     height: 80px;
-    background-image: url('https://media.discordapp.net/attachments/680782394479214619/1070899844241170473/sdqsd.png');;
+    background-image: url('https://media.discordapp.net/attachments/680782394479214619/1070899844241170473/sdqsd.png');
+    ;
     /* border-width: 5px;
     border-radius: 0;
     border-image: url('https://64.media.tumblr.com/3c541d7ee43b416e53c2915285e3a8c4/7640d3881508b2f9-b9/s640x960/8e1a1d51d0ea2b7a16a47ebf06ad402f011e2110.gif') 20; */
@@ -53,6 +54,14 @@ body {
 
 .mainmenu {}
 
+.menuicon {
+    margin-right: 10px;
+}
+
+a:hover {
+    filter: drop-shadow(0 0 8px #99b6ff);
+}
+
 .main {}
 
 .footer {}
@@ -60,4 +69,43 @@ body {
 .webring {
     display: flex;
     justify-content: space-between;
+}
+
+.badges8831list {
+    display: flex;
+    animation: horizontal-scroll linear infinite 60s;
+}
+
+.badges8831 {
+    display: block;
+    min-width: 88px;
+    height: 31px;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #CDDBFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #99b6ff;
+    /* background: #CDDBFF; */
+}
+
+@keyframes horizontal-scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-130%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
