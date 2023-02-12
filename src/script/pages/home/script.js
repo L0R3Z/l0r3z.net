@@ -2,7 +2,7 @@ let backgroundMusic = document.querySelector('#bgmusic');
 let playBackgroundMusic = document.querySelector('#bgmusic-play');
 let stopBackgroundMusic = document.querySelector('#bgmusic-stop');
 
-backgroundMusic.volume = 0.05;
+backgroundMusic.volume = 0.03;
 backgroundMusic.play();
 
 playBackgroundMusic.addEventListener("click", () => {
