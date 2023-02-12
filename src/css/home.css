@@ -17,6 +17,10 @@ body {
     margin: auto;
 }
 
+.hidden {
+    display: none;
+}
+
 .margintop {
     margin-top: 10px;
 }
@@ -58,7 +62,7 @@ body {
     margin-right: 10px;
 }
 
-a:hover {
+.clickable:hover {
     filter: drop-shadow(0 0 8px #99b6ff);
 }
 

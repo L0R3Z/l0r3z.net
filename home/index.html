@@ -36,7 +36,7 @@
         <ul>
           <li>
             <p>
-              <a href="../404.html" title="this page doesn't exist">404 page</a>
+              <a class="clickable" href="../404.html" title="this page doesn't exist">404 page</a>
             </p>
           </li>
           <li>
@@ -49,13 +49,13 @@
         <ul>
           <li style="display: flex;">
             <img class="menuicon" src="https://windowsme.neocities.org/images/nuko/cat118.gif">
-            <a href="../shrines/miamoalex-birthday">
+            <a class="clickable" href="../shrines/miamoalex-birthday">
               <p title="cool guy!">Miamoalex shrine</p>
             </a>
           </li>
           <li style="display: flex;">
             <img class="menuicon" src="https://windowsme.neocities.org/images/nuko/cat107.gif">
-            <a href="#">
+            <a class="clickable" href="#">
               <p title="cool guy!">Work in progress...</p>
             </a>
           </li>
@@ -72,8 +72,8 @@
             <p>This website is part of an unnamed webribg</p>
             <p>[coming sooooon]</p>
             <div>
-              <a href="https://miamoalex.net/" class="footer__link">◄ miamoalex</a>
-              <a href="https://crylotte.neocities.org" class="footer__link">crylotte ►</a>
+              <a href="https://miamoalex.net/" class="footer__link clickable">◄ miamoalex</a>
+              <a href="https://crylotte.neocities.org" class="footer__link clickable">crylotte ►</a>
             </div>
           </li>
         </ul>
@@ -96,11 +96,11 @@
             <p>Currently listening to...</p>
             <div style="display: flex; flex: 1; flex-direction: column; justify-content: center; align-items: center;">
               <img id="trackart" src="#" style="width:100px; border-radius: 5px;">
-              <p><a id="tracktitle"></a> by <a href="#" id="trackartist"></a> ♫</p>
+              <p><a class="clickable" id="tracktitle"></a> by <a class="clickable" href="#" id="trackartist"></a> ♫</p>
             </div>
           </article>
           <article class="box" style="flex: 1; display: flex; justify-content: center; align-items: center;">
-            <p>♥ feeling motivated! ♥</p>
+            <p>♥ feeling tired! ♥</p>
           </article>
         </div>
         <div>
@@ -116,8 +116,8 @@
             <p><span style="text-decoration: underline;">Languages:</span> English ; French</p>
             <p><span style="text-decoration: underline;">Favorite games:</span> Elden Ring ; Life is Strange ; Minecraft ; BotW</p>
             <p><span style="text-decoration: underline;">Favorite movies:</span> Lord of the Rings ; Howl's Moving Castle</p>
-            <p><span style="text-decoration: underline;">Favorite TV shows:</span> Gravity Falls ; Adventure Time ; Mob Psycho 100 ; Twin Peaks ; Better Call Saul ; Sonny Boy</p>
-            <p><span style="text-decoration: underline;">Favorite music:</span> Kero Kero Bonito ; underscores ; Drive45 ; Machine Girl ; Men I Trust ; Chelmico ; 100 gecs ; food house</p>
+            <p><span style="text-decoration: underline;">Favorite TV shows:</span> Better Call Saul ; Twin Peaks ; Gravity Falls ; Adventure Time ; Mob Psycho 100 ; Sonny Boy</p>
+            <p><span style="text-decoration: underline;">Favorite music:</span> Kero Kero Bonito ; underscores ; Drive45 ; Machine Girl ; Men I Trust ; Chelmico ; 100 gecs ; Mitski</p>
             <p><span style="text-decoration: underline;">Other interests:</span> indie music and animation ; Japan ; programming ; weird/unsettling things ; early web</p>
           </article>
         </div>
@@ -132,13 +132,14 @@
             <p>• box with the series/anime i'm currently watching</p>
             <p>• chatbox</p>
             <p>• fake ads and more img on homepage</p>
-            <p>• background music and music player</p>
+            <p>• music player</p>
             <p>• "about the webmaster"</p>
             <p>• webringz</p>
             <p>a whole lot of pages and shrines and deepness to the website...</p>
           </article>
           <article class="box" style="height: 200px; overflow: auto;">
             <p><strong>Versions</strong></p>
+            <p><span style="text-decoration: underline;">• 0.17 (12/02/2023):</span> mood changed + background music</p>
             <p><span style="text-decoration: underline;">• 0.16 (05/02/2023):</span> alt, title and link all my 88x31 + version box + My 88x31 box replacing friends box + featured video box + about the webmaster box</p>
             <p><span style="text-decoration: underline;">• 0.15 (04/02/2023):</span> 88x31 slider + todo box + friends box + scrollbar + some random restyle + chloe price</p>
             <p><span style="text-decoration: underline;">• 0.14 (03/02/2023):</span> big big layout changes (more definitive design) + header + currently listening to... box</p>
@@ -238,6 +239,17 @@
     </footer>
   </div>
 
+  <!-- Music -->
+  <div class="box" style="position: absolute; top: 0; right: 0; margin-right: 10px; margin-top: 10px;">
+    <audio id="bgmusic" src="../src/sound/home/(idle).mp3" loop></audio>
+    <p style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <span style="margin-right: 10px;">Playing {idle} by bliss3three</span>
+      <span class="hidden clickable" id="bgmusic-play" style="cursor: pointer;">PLAY</span>
+      <span class="clickable" id="bgmusic-stop" style="cursor: pointer;">STOP</span>
+    </p>
+    <!-- <img src="" alt=""> -->
+  </div>
+
   <!-- VERSION -->
   <div style="position: absolute; bottom: 0; right: 0; margin-right: 5px;">
     <p>0.16</p>
@@ -245,6 +257,7 @@
 
   <!-- SCRIPTS -->
   <script src="../src/script/api/lastfm.js"></script>
+  <script src="../src/script/pages/home/script.js"></script>
 </body>
 
 </html>
