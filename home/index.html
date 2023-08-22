@@ -9,9 +9,13 @@
   <link rel="stylesheet" href="../src/css/reset.css">
   <link rel="stylesheet" href="../src/css/home.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="cursor: url('/src/img/icons/home.cur'), auto;">
   <!-- NEKO -->
   <script>NekoType = "blue"</script>
   <h1 id=nl>
@@ -32,14 +36,14 @@
     <!-- RIGHT MENU -->
     <menu class="rightmenu" style="position: absolute; margin-left: 810px; width: 200px;">
       <div class="box">
-        <p><strong>Menu</strong></p>
+        <p class="title"><strong>Menu</strong></p>
         <ul>
           <li>
             <p>
-              <a class="clickable" href="../404.html" title="this page doesn't exist">404 page</a>
+              <a class="clickable" href="../art/" title="my art!">art gallery</a>
             </p>
             <p>
-              <!-- <a class="clickable" href="../diary/" title="getting a bit personal">diary</a> -->
+              <a class="clickable" href="../404.html" title="this page doesn't exist">404 page</a>
             </p>
           </li>
           <li>
@@ -48,7 +52,7 @@
         </ul>
       </div>
       <div class="box">
-        <p><strong>Shrines</strong></p>
+        <p class="title"><strong>Shrines</strong></p>
         <ul>
           <li style="display: flex;">
             <img class="menuicon" src="https://windowsme.neocities.org/images/nuko/cat118.gif">
@@ -65,10 +69,9 @@
         </ul>
       </div>
       <article class="box" style="height: 200px; overflow: auto;">
-        <p><strong>To do...</strong></p>
+        <p class="title"><strong>To do...</strong></p>
         <p>• redesign Welcome and 404 pages</p>
         <p>• museum</p>
-        <p>• randomize featured video from a youtube playlis</p>
         <p>• box with the video games i'm currently playing</p>
         <p>• box with the series/anime i'm currently watching</p>
         <p>• chatbox</p>
@@ -82,17 +85,17 @@
     <!-- LEFT MENU -->
     <menu class="rightmenu" style="position: absolute; margin-left: -210px; width: 200px;">
       <div class="box">
-        <p><strong>Webrings</strong></p>
+        <p class="title" style="margin-bottom: 5px;"><strong>Webrings</strong></p>
         <ul style="display: flex; justify-content: center;">
-          <li style="text-align: center; border: 1px solid black; font-family: 'Comic Sans MS'; font-size: 11px; width: 150px;">
+          <li style="text-align: center; border: 1px solid black; font-family: 'Comic Sans MS'; font-size: 11px; width: 150px; padding: 5px;">
             <p>This website is part of the <br><strong>Goofy Ah Webring</strong></p>
             <img style="width: 50px;" src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-mascotte.png">
             <div style="display: flex; justify-content: center;">
-              <a href="https://miamoalex.net/" style="display: flex; margin-right: 2px;">
+              <a href="https://miamoalex.net/" style="display: flex; margin-right: 2px; cursor: inherit;">
                 <img style="width: 20px;" src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-left.png">
                 <p class="footer__link">miamoalex</p>
               </a>
-              <a href="https://crylotte.neocities.org/" style="display: flex; margin-left: 2px;">
+              <a href="https://crylotte.neocities.org/" style="display: flex; margin-left: 2px; cursor: inherit;">
                 <p class="footer__link">crylotte</p>
                 <img style="width: 20px;" src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-right.png">
               </a>
@@ -101,7 +104,7 @@
         </ul>
       </div>
       <div class="box">
-        <p><strong>My games</strong></p>
+        <p class="title"><strong>My games</strong></p>
         <ul>
           <li>
             <p>
@@ -150,19 +153,19 @@
               idk have a lovely day <img src="https://jvflux.fr/images/4/44/nyu.gif" alt=":)"></p>
           </article>
           <article class="box" style="height: 170px; overflow: auto;">
-            <p><strong>About the webmaster</strong></p>
+            <p class="title"><strong>About the webmaster</strong></p>
             <hr>
             <p><span style="text-decoration: underline;">Usernames:</span> L0R3Z ; Mrzozo</p>
             <!-- <p><span style="text-decoration: underline;">Age:</span> 21</p> -->
             <p><span style="text-decoration: underline;">Languages:</span> English ; French</p>
             <p><span style="text-decoration: underline;">Favorite games:</span> Elden Ring ; Life is Strange ; Minecraft
-              ; BotW</p>
+              ; TotK</p>
             <p><span style="text-decoration: underline;">Favorite movies:</span> Lord of the Rings ; Howl's Moving
               Castle</p>
             <p><span style="text-decoration: underline;">Favorite TV shows:</span> Better Call Saul ; Twin Peaks ;
-              Gravity Falls ; Adventure Time ; Mob Psycho 100 ; Sonny Boy</p>
-            <p><span style="text-decoration: underline;">Favorite music:</span> Kero Kero Bonito ; underscores ; Drive45
-              ; Machine Girl ; Men I Trust ; Chelmico ; 100 gecs ; Mitski</p>
+              Gravity Falls ; Adventure Time ; Sonny Boy</p>
+            <p><span style="text-decoration: underline;">Favorite music:</span> underscores ; Frost Children ; Kero Kero Bonito ; Drive45
+              ; Machine Girl ; Men I Trust ; Alice Longyu Gao ; 100 gecs ; Gorillaz ; Nujabes</p>
             <p><span style="text-decoration: underline;">Other interests:</span> indie music and animation ; Japan ;
               programming ; weird/unsettling things ; early web</p>
             <hr>
@@ -174,11 +177,12 @@
       <div style="display: flex;">
         <div style="margin-right: 10px; width: 400px;">
           <article class="box" style="height: 200px; overflow: auto;">
-            <p><strong>Blog</strong></p>
+            <p class="title"><strong>Blog</strong></p>
             <p>coming soon...</p>
           </article>
           <article class="box" style="height: 200px; overflow: auto;">
-            <p><strong>Versions</strong></p>
+            <p class="title"><strong>Versions</strong></p>
+            <p><span style="text-decoration: underline;">• 0.22 (21/08/2023):</span> Random featured video + Some graphics reworks + New page!! Art gallery (under construction)</p>
             <p><span style="text-decoration: underline;">• 0.21 (21/08/2023):</span> Goofy Ah Webring!</p>
             <p><span style="text-decoration: underline;">• 0.19 (01/03/2023):</span> new box: My games, and layout
               changes</p>
@@ -201,7 +205,7 @@
         </div>
         <div style="display: flex; flex-direction: column; flex: 1;">
           <article class="box" style="height: fit-content;">
-            <p><strong>My 88x31</strong></p>
+            <p class="title"><strong>My 88x31</strong></p>
             <p>Friends!!!</p>
             <div style="display: flex;">
               <a href="https://miamoalex.net/"><img class="badges8831"
@@ -225,8 +229,8 @@
             </div>
           </article>
           <article class="box" style="flex: 1; display: flex; flex-direction: column;">
-            <p><strong>Featured video</strong></p>
-            <iframe class="video" src="https://www.youtube.com/embed/qLurAhsqXWc" title="YouTube video player"
+            <p class="title"><strong>Featured video</strong></p>
+            <iframe id="randomized-video" class="video" src="https://www.youtube.com/embed/qLurAhsqXWc" title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
@@ -304,15 +308,15 @@
     <audio id="bgmusic" src="../src/sound/home/(idle).mp3" loop></audio>
     <p style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
       <span style="margin-right: 10px;">Playing {idle} by bliss3three</span>
-      <span class="hidden clickable" id="bgmusic-play" style="cursor: pointer;">PLAY</span>
-      <span class="clickable" id="bgmusic-stop" style="cursor: pointer;">STOP</span>
+      <span class="hidden clickable" id="bgmusic-play">PLAY</span>
+      <span class="clickable" id="bgmusic-stop">STOP</span>
     </p>
     <!-- <img src="" alt=""> -->
   </div>
 
   <!-- VERSION -->
   <div style="position: absolute; bottom: 0; right: 0; margin-right: 5px;">
-    <p>0.21</p>
+    <p>0.22</p>
   </div>
 
   <!-- SCRIPTS -->

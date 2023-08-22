@@ -29,10 +29,11 @@ body {
     background-color: white;
     padding: 10px;
     margin-bottom: 10px;
-    border-width: 1px;
+    /* border-width: 1px;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 5px; */
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.63);
+    border: #D1DBFF ridge 3px
     /* cool pink chunky border */
     /* border-width: 10px;
     border-image: url('https://cdn140.picsart.com/322698437144201.png') 1100 round; */
@@ -58,12 +59,20 @@ body {
 
 .mainmenu {}
 
+.title {
+    text-shadow: 2px 2px 0 #eaefff, 2px 2px 0 #000000, 2px 2px 0 #000000, 2px 2px 0 #000000;
+}
+
 .menuicon {
     margin-right: 10px;
 }
 
+.clickable {
+    cursor: inherit;
+}
+
 .clickable:hover {
-    filter: drop-shadow(0 0 8px #99b6ff);
+    filter: drop-shadow(0 0 8px #5d8bff);
 }
 
 .main {}
