@@ -5,7 +5,6 @@ html {
 body {
     height: 100%;
     background-image: url('/src/img/bg/welcome1.png');
-    margin: 0;
 }
 
 main {
@@ -25,8 +24,8 @@ main {
 
 .container {
     display: flex;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: clamp(10%, 1.75vw, 20%);
+    padding-right: clamp(10%, 1.75vw, 20%);
     margin-top: 4%;
 }
 
@@ -53,7 +52,7 @@ main {
     top: 0;
     left: 0;
     z-index: 1;
-    transition: top 0.2s ease-out;
+    transition: top 0.1s ease-in;
     pointer-events: none;
 }
 
