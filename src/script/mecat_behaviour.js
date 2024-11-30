@@ -56,7 +56,6 @@ class MecatController {
     }
 
     playAudio() {
-        console.log(this.audio.volume)
         this.audio.play();
         let volume = 0;
         const step = 0.01;

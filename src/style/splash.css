@@ -1,10 +1,26 @@
+/* --------- */
+/* VARIABLES */
+/* --------- */
+
+:root {
+    --color-background: rgba(255, 255, 255, 0.7);
+    --color-border: rgba(209, 219, 255, 0.7);
+    --color-scrollbar: rgba(71, 138, 184, 0.5);
+    --color-text-basic: #478AB8;
+    --color-text-highlighted: #FF5CB8;
+}
+
+/* ------- */
+/* GENERAL */
+/* ------- */
+
 html {
     height: 100vh;
 }
 
 body {
     height: 100%;
-    background-image: url('/src/img/bg/welcome1.png');
+    background-image: url('/src/img/bg/splash1.png');
 }
 
 main {
@@ -61,11 +77,11 @@ main {
     transition: top 4s cubic-bezier(0.4, 0, 1, 1);
 }
 
-.text_box {
+.box {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    font-family: kiwisoda, sans-serif;
+    font-family: kiwisoda, serif;
     font-size: clamp(1rem, 1.75vw, 1.75rem);
     padding: .75em;
     margin-top: 7%;
@@ -73,7 +89,7 @@ main {
     max-width: 70%;
 }
 
-.text_box>*:nth-child(2) {
+.box>*:nth-child(2) {
     margin-top: 1em;
     text-align: right;
 }
