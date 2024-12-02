@@ -254,6 +254,7 @@ header aside p {
     bottom: .25em;
     right: -1.25em;
     transform: rotateZ(-10deg);
+    pointer-events: none;
 }
 
 /* ------ */
