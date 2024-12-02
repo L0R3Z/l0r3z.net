@@ -60,8 +60,8 @@ img {
 }
 
 .box {
-    padding: .8em;
-    margin: 10px;
+    padding: .75em;
+    margin: .5em;
 }
 
 /* ------ */
@@ -160,11 +160,11 @@ header aside p {
     transform: scaleX(-1);
 }
 
-#whereami_text {
+#whereami--text {
     margin-left: 1em;
 }
 
-#whereami_text #l0r3z_username {
+#whereami--text #l0r3z_username {
     font-size: 1.2em;
     /* text-shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgba(106, 155, 255, 0.684); */
 }
@@ -181,19 +181,26 @@ header aside p {
     margin-top: .25em;
 }
 
-
 /* #aboutwebsite .big {
     font-size: em;
 } */
 
 /* ABOUT ME */
 
-#whatsup {
-    margin-bottom: 1.25em;
+#aboutme_codeofhonor {
+    display: flex;
+    margin: 0;
+    height: 180px;
 }
 
-#whatsup a {
-    animation: blink 1s infinite;
+#aboutme {
+    overflow: auto;
+    width: 55%;
+    margin-top: 0;
+}
+
+#whatsup {
+    margin-bottom: 1.25em;
 }
 
 #whatsup p {
@@ -209,12 +216,45 @@ header aside p {
     gap: 1em;
 }
 
-#aboutme {
+/* #aboutme {
     width: 40%;
     min-width: 120px;
-}
+} */
 
 #aboutme {}
+
+/* CODE OF HONOR */
+
+#codeofhonor {
+    overflow: auto;
+    width: 45%;
+    margin-top: 0;
+    margin-left: 0;
+    position: relative;
+}
+
+#codeofhonor h2 {
+    font-size: .4em;
+}
+
+#codeofhonor--description {
+    /* margin-bottom: .5em; */
+}
+
+#codeofhonor li {
+    margin-top: .4em;
+}
+
+#codeofhonor p {
+    font-size: .8em;
+}
+
+#codeofhonor--gif {
+    position: absolute;
+    bottom: .25em;
+    right: -1.25em;
+    transform: rotateZ(-10deg);
+}
 
 /* ------ */
 /* FOOTER */

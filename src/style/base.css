@@ -89,6 +89,10 @@ small {
     /* text-shadow: 1px 1px 5px white, -1px -1px 5px rgb(255, 255, 255); */
 }
 
+.blinktext {
+    animation: blink 1s infinite;
+}
+
 .float {
     display: inline-block;
     animation: float 3s ease-in-out infinite;
