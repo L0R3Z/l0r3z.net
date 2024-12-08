@@ -190,7 +190,7 @@ header aside p {
 #aboutme_codeofhonor {
     display: flex;
     margin: 0;
-    height: 180px;
+    height: 200px;
 }
 
 /* ABOUT ME */
@@ -203,6 +203,14 @@ header aside p {
 
 #aboutme h2 {
     font-size: .4em;
+    position: relative;
+}
+
+#aboutme h2 img {
+    position: absolute;
+    height: 2em;
+    margin-left: 1em;
+    bottom: .05em;
 }
 
 #aboutme p {
@@ -210,14 +218,35 @@ header aside p {
     margin-bottom: .2em;
 }
 
-#aboutme li {
-    list-style: decimal;
-    margin-left: 1em;
+#aboutme--intro {
+    display: flex;
+    flex-direction: line;
 }
+
+#aboutme ul {
+    margin-left: .5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+#aboutme li {
+    margin-top: .2em;
+}
+
 
 #aboutme li p {
     margin-bottom: 0;
 }
+
+#aboutme li .float {
+    animation: float .2s ease-in infinite;
+}
+
+#aboutme--socials {
+    text-align: center;
+    margin-top: .75em;
+}
+
 
 #whatsup {
     margin-bottom: 1.25em;

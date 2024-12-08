@@ -93,6 +93,10 @@ small {
     animation: blink 1s infinite;
 }
 
+.zoomtext {
+    animation: zoom 1s infinite;
+}
+
 .float {
     display: inline-block;
     animation: float 3s ease-in-out infinite;
@@ -137,5 +141,19 @@ small {
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(2);
+    }
+
+    100% {
+        transform: scaleY(0);
     }
 }
