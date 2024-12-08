@@ -185,7 +185,7 @@ header aside p {
     font-size: em;
 } */
 
-/* ABOUT ME */
+/* ABOUT ME & CODE OF HONOR */
 
 #aboutme_codeofhonor {
     display: flex;
@@ -193,10 +193,30 @@ header aside p {
     height: 180px;
 }
 
+/* ABOUT ME */
+
 #aboutme {
     overflow: auto;
     width: 55%;
     margin-top: 0;
+}
+
+#aboutme h2 {
+    font-size: .4em;
+}
+
+#aboutme p {
+    font-size: .8em;
+    margin-bottom: .2em;
+}
+
+#aboutme li {
+    list-style: decimal;
+    margin-left: 1em;
+}
+
+#aboutme li p {
+    margin-bottom: 0;
 }
 
 #whatsup {
@@ -209,12 +229,12 @@ header aside p {
     transform: rotate(3deg);
 }
 
-#about {
+/* #about {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1em;
-}
+} */
 
 /* #aboutme {
     width: 40%;
