@@ -48,6 +48,12 @@ p {
 a {
     color: var(--color-text-highlighted);
     cursor: pointer;
+    transition: text-shadow .5s;
+    z-index: 15;
+}
+
+a:hover {
+    text-shadow: 0px 0px 1px var(--color-text-highlighted), 0px 0px 4px var(--color-text-highlighted);
 }
 
 img {

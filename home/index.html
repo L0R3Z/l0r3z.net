@@ -9,12 +9,21 @@
     <link rel="stylesheet" href="/src/style/reset.css">
     <link rel="stylesheet" href="/src/style/base.css">
     <link rel="stylesheet" href="/src/style/home.css">
-    <!-- <script src="src/script/mecat_behaviour.js" defer></script> -->
 </head>
 
 <body>
     <!-- MAIN ELEMENTS -->
     <main>
+        <div id="left">
+            <section class="box" id="listeningto">
+                <h2>Listening to</h2>
+                <p><a class="clickable" id="tracktitle"></a> by <a class="clickable" href="#" id="trackartist"></a></p>
+                <div id="cdcontainer">
+                    <img id="trackart" src="#">
+                    <img id="cd" src="/src/img/deco/cd.png" alt="">
+                </div>
+            </section>
+        </div>
         <div id="center">
             <header>
                 <aside class="box" id="headerbox">
@@ -188,30 +197,33 @@
                 </section>
                 <img id="codeofhonor--gif" src="/src/img/gif/codeofhonor.gif">
             </div>
+
+            <!-- FOOTER -->
+            <footer>
+                <aside class="box" id="list8831">
+                    <img class="badge8831" src="/src/img/8831/88x31.gif" alt="88x31">
+                    <img class="badge8831" src="/src/img/8831/cat.gif" alt="no time spent with a cat is wasted">
+                    <img class="badge8831" src="/src/img/8831/dream.gif" alt="dream">
+                    <img class="badge8831" src="/src/img/8831/figma.png" alt="figma">
+                    <img class="badge8831" src="/src/img/8831/freeweb.gif" alt="free web, say no to the web 3.0">
+                    <img class="badge8831" src="/src/img/8831/jerma985.png" alt="jerma985">
+                    <img class="badge8831" src="/src/img/8831/lgbt.gif" alt="lgbt">
+                    <img class="badge8831" src="/src/img/8831/neocitiesblue.gif" alt="neocities">
+                    <img class="badge8831" src="/src/img/8831/poweredbymiamo.gif" alt="powered by Miamo">
+                    <img class="badge8831" src="/src/img/8831/upallnight.gif" alt="up all night">
+                </aside>
+                <aside id="legal">
+                    <p style="text-align: center; font-size: 80%;">L0R3Z 2024 // Hosted by Miamo on the world wide web since <i>29.jan.2023</i>
+                    </p>
+                </aside>
+            </footer>
         </div>
-        <div id="left"></div>
         <div id="right"></div>
     </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <aside class="box" id="list8831">
-            <img class="badge8831" src="/src/img/8831/88x31.gif" alt="88x31">
-            <img class="badge8831" src="/src/img/8831/cat.gif" alt="no time spent with a cat is wasted">
-            <img class="badge8831" src="/src/img/8831/dream.gif" alt="dream">
-            <img class="badge8831" src="/src/img/8831/figma.png" alt="figma">
-            <img class="badge8831" src="/src/img/8831/freeweb.gif" alt="free web, say no to the web 3.0">
-            <img class="badge8831" src="/src/img/8831/jerma985.png" alt="jerma985">
-            <img class="badge8831" src="/src/img/8831/lgbt.gif" alt="lgbt">
-            <img class="badge8831" src="/src/img/8831/neocitiesblue.gif" alt="neocities">
-            <img class="badge8831" src="/src/img/8831/poweredbymiamo.gif" alt="powered by Miamo">
-            <img class="badge8831" src="/src/img/8831/upallnight.gif" alt="up all night">
-        </aside>
-        <aside id="legal">
-            <p style="text-align: center; font-size: 80%;">L0R3Z 2024 // Hosted by Miamo on the world wide web since <i>29.jan.2023</i>
-            </p>
-        </aside>
-    </footer>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/src/script/lastfm_lastplayed.js" defer></script>
 </body>
 
 </html>

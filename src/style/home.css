@@ -38,8 +38,8 @@ a {
 }
 
 main {
-    max-width: 684px;
     position: relative;
+    display: flex;
 }
 
 h2 {
@@ -61,7 +61,7 @@ img {
 
 .box {
     padding: .75em;
-    margin: .5em;
+    margin: .4em;
 }
 
 /* ------ */
@@ -115,9 +115,90 @@ header aside p {
     color: var(--color-text-light);
 }
 
+/* ---- */
+/* LEFT */
+/* ---- */
+
+#left {
+    max-width: 200px;
+    /* margin-right: .4em; */
+    margin-left: .4em;
+    /* transform: rotate(-2deg); */
+}
+
+#listeningto {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin-right: 0;
+    margin-left: 0;
+    overflow: hidden;
+    padding: .5em;
+}
+
+#listeningto h2 {
+    font-size: .4em;
+    margin-bottom: .5em;
+}
+
+#listeningto #cdcontainer {
+    position: relative;
+    display: flex;
+    align-items: start;
+    max-height: 4.4em;
+    padding-left: .45em;
+    background-image: url("/src/img/deco/cdbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#listeningto #trackart {
+    max-height: inherit;
+    width: 4.22em;
+}
+
+#listeningto #cd {
+    position: absolute;
+    width: 62%;
+    top: .1em;
+    right: 0;
+    animation: cdspin 3s linear infinite;
+    z-index: -1;
+}
+
+#listeningto p {
+    font-size: .75em;
+    margin-bottom: .5em;
+}
+
+@keyframes cdspin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ----- */
+/* RIGHT */
+/* ----- */
+
+#right {
+    /* width: 10em; */
+}
+
+
 /* ------ */
 /* CENTER */
 /* ------ */
+
+#center {
+    max-width: 684px;
+    position: relative;
+}
 
 /* INTRODUCTION */
 
@@ -170,7 +251,7 @@ header aside p {
 }
 
 #aboutwebsite {
-    margin: .5em .5em .25em;
+    margin: .4em .4em .25em;
 }
 
 #noteaboutthewebsite ul {
@@ -312,6 +393,9 @@ header aside p {
 
 footer {
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer .box {
