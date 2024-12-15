@@ -120,7 +120,7 @@ header aside p {
 /* ---- */
 
 #left {
-    max-width: 200px;
+    width: 200px;
     /* margin-right: .4em; */
     margin-left: .4em;
     /* transform: rotate(-2deg); */
@@ -169,7 +169,7 @@ header aside p {
 
 #listeningto p {
     font-size: .75em;
-    margin-bottom: .5em;
+    margin-bottom: .4em;
 }
 
 @keyframes cdspin {
