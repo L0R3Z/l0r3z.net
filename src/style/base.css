@@ -88,6 +88,18 @@ small {
     text-decoration: underline;
 }
 
+.video {
+    position: relative;
+    height: 100%;
+    /* border: solid 1px black; */
+    /* border-radius: 5px; */
+}
+
+.video iframe {
+    height: 100%;
+    width: 100%;
+}
+
 /* Animations */
 .spintext {
     display: inline-block;

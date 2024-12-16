@@ -14,7 +14,6 @@ var lastfmData = {
 };
 
 var getSetLastFM = function () {
-    console.log("hi");
     $.ajax({
         type: "GET",
         url:
