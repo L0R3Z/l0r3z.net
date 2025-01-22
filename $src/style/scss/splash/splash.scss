@@ -1,0 +1,95 @@
+@import "../var";
+
+/* --------- */
+/* VARIABLES */
+/* --------- */
+
+$color-background: rgba(255, 255, 255, 0.7);
+$color-border: rgba(209, 219, 255, 0.7);
+$color-scrollbar: rgba(71, 138, 184, 0.5);
+$color-text-basic: #478ab8;
+$color-text-highlighted: #ff5cb8;
+
+/* ------- */
+/* GENERAL */
+/* ------- */
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    background-image: url("/$src/img/bg/splash1.png");
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    width: 50%;
+    z-index: 2;
+    top: 0;
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    padding-left: clamp(10%, 1.75vw, 20%);
+    padding-right: clamp(10%, 1.75vw, 20%);
+    margin-top: 4%;
+}
+
+.mecat_container {
+    position: relative;
+    width: auto;
+    width: 22vw;
+    object-fit: contain;
+    margin-right: 3%;
+
+    img {
+        width: 100%;
+        transform: scaleX(-1);
+    }
+}
+
+#mecat {
+    position: relative;
+    cursor: pointer;
+
+    &_jaw {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: top 0.1s ease-in;
+        pointer-events: none;
+    }
+
+    &:hover + #mecat_jaw {
+        top: 10%;
+        transition: top 4s cubic-bezier(0.4, 0, 1, 1);
+    }
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    font-family: kiwisoda, serif;
+    font-size: clamp(1rem, 1.75vw, 1.75rem);
+    padding: 0.75em;
+    margin-top: 7%;
+    line-height: 1em;
+    max-width: 70%;
+
+    > *:nth-child(2) {
+        margin-top: 1em;
+        text-align: right;
+    }
+}

@@ -1,0 +1,41 @@
+see dates on github
+
+0.91
+• [commited] minor welcome page responsivness fix
+
+1.0
+• big update, new homepage is here! with new header, footer and a section to describe the website. not much... but there's more on the way!
+
+1.01
+• added the "Website's Code of Honor" to the home page, a personal rant about what i defined to be the 6 core principles i want to follow while making this project!
+
+1.011
+• minor correction in the code of honor
+• quicknote about clearing the cache
+• minor correction of the code of honor book gif blocking the scrollbar
+
+1.02
+• added content to the ABOUT ME (didn't stylized the text yet tho...)
+
+1.021
+• some adjustements to the content of ABOUT ME (stylized the text, and added my socials at the bottom :v)
+
+1.03
+• added LISTENING TO box, linked to my last.fm for real time data!
+• adjusted some margin and added hover glowing to <a> links
+
+1.031
+• quickfix because the CD isnt showing up...
+
+1.04
+• new featured video section with featured videos that I really love! not responsive yet tho...
+
+1.05
+• added MENU
+• L0R3Z 2025 in the footer. happy new year!
+
+1.1
+• got tired of CSS, so SCSS time!
+• changed the layout (again) for better responsiveness (again)
+• Finally added the chains...
+• (maybe) fixed the 404 page

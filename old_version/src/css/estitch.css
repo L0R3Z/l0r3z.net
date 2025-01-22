@@ -1,0 +1,54 @@
+body {
+    overflow: hidden;
+    background-color: aliceblue;
+    background-image: url(https://media.discordapp.net/attachments/680782394479214619/1096081053069889576/images.jpg);
+
+    /* Pour quand il faut pas repeat le bg */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    background-color: rgb(238, 238, 238);
+    border-radius: 0;
+    box-shadow: 0px 4px 6px rgb(104, 104, 104);
+    /* cool pink chunky border */
+    /* border-width: 10px;
+    border-image: url('https://cdn140.picsart.com/322698437144201.png') 1100 round; */
+}
+
+.header__box {
+    background-image: url('https://media.discordapp.net/attachments/680782394479214619/1096081052814024745/la-texture-brillante-liquide-d-de-contexte-du-fond-l-effet-eau-miroir-chrome-metallique-argente-rendent-illustration-174247058.jpg?width=1402&height=701')
+}
+
+.badges8831list {
+    animation: horizontal-scroll linear infinite 15s;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #cccccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #808080;
+    /* background: #CDDBFF; */
+}
+
+@keyframes horizontal-scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-54%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
