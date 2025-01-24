@@ -250,8 +250,89 @@ main {
     height: 195px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-template-columns: 0.6fr 0.9fr 0.9fr 0.6fr;
     gap: 0.4em 0.4em;
+}
+
+/* COMMUNITY */
+.community {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: inherit;
+
+    h2 {
+        font-size: 0.4em;
+        text-align: center;
+        margin-bottom: 0.5em;
+    }
+
+    &--webrings {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .goofy_ah_webring {
+        text-align: center;
+        border: 1px solid black;
+        font-family: "Comic Sans MS";
+        background-color: white;
+        padding: 0.5em;
+        font-size: 0.33em;
+
+        p {
+            line-height: normal;
+            color: black;
+        }
+
+        .smilies {
+            width: 2em;
+            height: auto;
+        }
+
+        &--mascot {
+            width: 5em;
+        }
+
+        &--links {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            flex-wrap: wrap;
+            // flex-direction: line;
+
+            a {
+                display: flex;
+                gap: 0.25em;
+            }
+        }
+    }
+
+    // &--container {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     margin-top: 0.5em;
+    // }
+
+    // &--item {
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     margin: 0.5em;
+
+    //     img {
+    //         height: 2em;
+    //     }
+
+    //     p {
+    //         font-size: 0.8em;
+    //         margin-top: 0.25em;
+    //     }
+    // }
 }
 
 /* ABOUT ME */
@@ -385,7 +466,7 @@ main {
 
     #cd {
         position: absolute;
-        width: 72%;
+        width: 4.22em;
         top: 0.1em;
         right: 0;
         animation: cdspin 3s linear infinite;

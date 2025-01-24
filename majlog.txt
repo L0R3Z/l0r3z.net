@@ -34,7 +34,7 @@ see dates on github
 • added MENU
 • L0R3Z 2025 in the footer. happy new year!
 
-1.1
+1.06
 • got tired of CSS, so SCSS time!
 • changed the layout (again) for better responsiveness (again)
 • Finally added the chains...
