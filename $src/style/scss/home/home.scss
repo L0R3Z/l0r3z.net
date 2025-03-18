@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: simple, sans-serif;
-    font-size: clamp(1rem, 3vw, 1.625rem);
+    font-size: clamp(1rem, 3vw, 2.03rem);
     overflow-x: hidden;
 }
 
@@ -47,7 +47,7 @@ img {
 main {
     position: relative;
     margin: 6vh 0.8em 0 0.8em;
-    max-width: 930px;
+    max-width: 35.8em;
     display: grid;
     grid-template-columns: 1fr;
     // grid-template-rows: 1fr 1fr 1fr;
@@ -86,7 +86,8 @@ main {
 /* ----------- */
 
 .first_block {
-    height: 370px;
+    height: 14.2em;
+    min-height: 370px;
     width: 100%;
     display: grid;
     grid-template-columns: 0.8fr 2.9fr 1.2fr;
@@ -201,13 +202,14 @@ main {
 .introduction {
     display: grid;
     height: inherit;
-    width: 100%;
+        min-height: inherit;
+        width: 100%;
     // overflow: auto;
     // transform: rotate(3deg);
 
     &--container {
         overflow: auto;
-        // height: initial;
+        // height: inherit;
         margin-top: 0;
     }
 }
@@ -300,7 +302,8 @@ main {
 /* ------------ */
 
 .second_block {
-    height: 195px;
+    height: 7.5em;
+    min-height: 150px;
     width: 100%;
     display: grid;
     grid-template-columns: 0.6fr 0.9fr 0.9fr 0.6fr;
@@ -314,6 +317,7 @@ main {
     flex-direction: column;
     overflow: auto;
     height: inherit;
+    min-height: inherit;
 
     h2 {
         font-size: 0.4em;
@@ -454,6 +458,7 @@ main {
     height: inherit;
     position: relative;
     display: flex;
+    min-height: inherit;
 }
 
 #codeofhonor {
