@@ -129,21 +129,21 @@ Controller = (() => {
         View.playAudio().catch((error) => {
             if (error.name === "NotAllowedError") {
                 View.pauseAudio();
-                View.setPlayButtonText("Play");
+                View.setPlayButtonText("play");
             } else {
                 console.error("Audio playback error:", error);
             }
         });;;
-        View.setPlayButtonText("Pause");
+        View.setPlayButtonText("pause");
     };
 
     const togglePlayPause = () => {
         if (View.isPaused()) {
             View.playAudio();
-            View.setPlayButtonText("Pause");
+            View.setPlayButtonText("pause");
         } else {
             View.pauseAudio();
-            View.setPlayButtonText("Play");
+            View.setPlayButtonText("play");
         }
     };
 
