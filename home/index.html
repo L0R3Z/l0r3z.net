@@ -21,36 +21,65 @@
     <main>
         <!-- FIRST BLOCK OF CONTENT -->
         <div class="block first_block">
-            <!-- MENU -->
-            <nav class="box menu">
-                <div class="menu--section">
-                    <h2 class="menu--section--title">PERSONAL</h2>
-                    <ul class="menu--section--list">
-                        <li class="menu--section--list--item">
-                            <p>
-                                <a href="#" class="clickable" style="pointer-events: none;">>journal</a>
-                                <small>coming soon!</small>
-                            </p>
-                            <p>
-                                <a href="#" class="clickable" style="pointer-events: none;">>monthly_log</a>
-                                <small>coming soon!</small>
-                            </p>
-                        </li>
-                    </ul>
+
+            <!-- Sur mobile, afficher la boite en floating en bas de l'écran -->
+            <!-- Render reglable le volume -->
+
+            <!-- MusicPlayer -->
+            <div class="first_block--left_block">
+                <div class="box music_player">
+                    <p class="music_player--title">
+                        <img class='smilies' src='/$src/img/icon/note.png'>
+                        MusicPlayer
+                        <img class='smilies' src='/$src/img/icon/note.png' style='padding-left: .1rem;'>
+                    </p>
+                    <div class="music_player--main">
+                        <a class="music_player--track_name clickable" id="track_name" target="_blank">Loading...</a>
+                        <div class="music_player--controls">
+                            <img id="prev" src="/$src/img/icon/player_left.png" alt="&#9664;">
+                            <img id="play_pause" src="/$src/img/icon/player_pause.png" alt="pause">
+                            <img id="next" src="/$src/img/icon/player_right.png" alt="&#9654;">
+                        </div>
+                        <img class="music_player--background" src="/$src/audio/music/a2457462772_16.jpg"
+                            id="player_thumbnail">
+                        <canvas id="audio-visualizer"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
+                    </div>
                 </div>
-                <div class="menu--section">
-                    <h2 class="menu--section--title">LINKS</h2>
-                    <ul class="menu--section--list">
-                        <li class="menu--section--list--item">
-                            <p>
-                                <a href="#" class="clickable" style="pointer-events: none;">>credits</a>
-                                <small>coming soon!</small>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <small class="menu--subtext">uhm yeah sorry the menu is pretty useless right now... i only added it for the layout lol :p</small>
-            </nav>
+
+                <!-- MENU -->
+                <nav class="box menu">
+                    <div class="menu--section">
+                        <h2 class="menu--section--title">PERSONAL</h2>
+                        <ul class="menu--section--list">
+                            <li class="menu--section--list--item">
+                                <p>
+                                    <a href="#" class="clickable" style="pointer-events: none;">>journal</a>
+                                    <small>coming soon!</small>
+                                </p>
+                                <p>
+                                    <a href="#" class="clickable" style="pointer-events: none;">>monthly_log</a>
+                                    <small>coming soon!</small>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu--section">
+                        <h2 class="menu--section--title">LINKS</h2>
+                        <ul class="menu--section--list">
+                            <li class="menu--section--list--item">
+                                <p>
+                                    <a href="#" class="clickable" style="pointer-events: none;">>credits</a>
+                                    <small>coming soon!</small>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <small class="menu--subtext">uhm yeah sorry the menu is pretty useless right now... i only added it
+                        for
+                        the layout lol :p</small>
+                </nav>
+            </div>
             <section class="introduction">
                 <!-- HEADER -->
                 <header class="header">
@@ -66,33 +95,56 @@
                         <img class="mecat float" src="/$src/img/deco/mecat/mecat-small.png" alt="silly guy">
                         <div class="where_am_i--text">
                             <h2>WHERE AM I?</h2>
-                            <p>hello and welcome to <a href="/home">l0r3z.net</a>! i'm <strong class="slightly_larger spintext">L0R3Z</strong>, and this is my personal web page. it's a <span class="underline">very early work in progress</span>, i'll try to add things every day or so, so <strong class="lightbold">come back soon for more</strong>! have a lovely day <img class="smilies" src="/$src/img/icon/pleading.gif" alt=":)"> </p>
+                            <p>hello and welcome to <a href="/home">l0r3z.net</a>! i'm <strong
+                                    class="slightly_larger spintext">L0R3Z</strong>, and this is my personal web page.
+                                it's a <span class="underline">very early work in progress</span>, i'll try to add
+                                things every day or so, so <strong class="lightbold">come back soon for more</strong>!
+                                have a lovely day <img class="smilies" src="/$src/img/icon/pleading.gif" alt=":)"> </p>
                         </div>
                     </div>
                     <div class="about_website">
-                        <p>i started working on this website in <span class="underline">early 2023</span> because of my passion for <strong class="lightbold">web development</strong>, <strong class="lightbold">the indieweb</strong>, <strong class="lightbold">neocities</strong> and <strong class="lightbold">personal websites</strong>. however, i very quickly let it die due to lack of time <small>(college yknow)</small>... but the story of <a href="https://l0r3z.net/home">l0r3z.net</a> doesn't end here! <span class="underline">as of end of november 2024</span>, <strong class="lightbold">i decided to pick the website up again</strong>, redesign it and recode it from the ground up! i aim to make a functional and aesthetically pleasing intricate website that will be <strong>an archive of both my personal life, my interests and my projects</strong>, a centralized hub of what i like, what i do and who i am.</p>
+                        <p>i started working on this website in <span class="underline">early 2023</span> because of my
+                            passion for <strong class="lightbold">web development</strong>, <strong
+                                class="lightbold">the indieweb</strong>, <strong class="lightbold">neocities</strong>
+                            and <strong class="lightbold">personal websites</strong>. however, i very quickly let it die
+                            due to lack of time <small>(college yknow)</small>... but the story of <a
+                                href="https://l0r3z.net/home">l0r3z.net</a> doesn't end here! <span class="underline">as
+                                of end of november 2024</span>, <strong class="lightbold">i decided to pick the website
+                                up again</strong>, redesign it and recode it from the ground up! i aim to make a
+                            functional and aesthetically pleasing intricate website that will be <strong>an archive of
+                                both my personal life, my interests and my projects</strong>, a centralized hub of what
+                            i like, what i do and who i am.</p>
                     </div>
                     <div class="note_about_website">
                         <h3>website's guidelines:</h3>
                         <ul>
                             <li>
-                                <p>> it's an <span class="underline">early WIP</span>, sorry if there's not much content yet! <small>i shall update it often or may i be punished...</small> anyway, hit control <strong class="lightbold">CTRL+F5</strong> if something looks off!</p>
+                                <p>> it's an <span class="underline">early WIP</span>, sorry if there's not much content
+                                    yet! <small>i shall update it often or may i be punished...</small> anyway, hit
+                                    control <strong class="lightbold">CTRL+F5</strong> if something looks off!</p>
                             </li>
                             <li>
-                                <p>> should be <strong class="lightbold">responsive</strong> and <strong class="lightbold">work on mobile</strong> as well! still, it was initially made for and <strong>best viewed on a 1920x1080p monitor</strong>
+                                <p>> should be <strong class="lightbold">responsive</strong> and <strong
+                                        class="lightbold">work on mobile</strong> as well! still, it was initially made
+                                    for and <strong>best viewed on a 1920x1080p monitor</strong>
                                 </p>
                             </li>
                             <li>
-                                <p>> <strong class="lightbold">no nsfw or explicit content</strong> here! i'm 23 tho, so the website is made for an adult audience</p>
+                                <p>> <strong class="lightbold">no nsfw or explicit content</strong> here! i'm 23 tho, so
+                                    the website is made for an adult audience</p>
                             </li>
                             <li>
-                                <p>> designed and developed for <span class="underline">Chromium browsers</span>... i'll try to make it work and look as good on Firefox as much as possible!</p>
+                                <p>> designed and developed for <span class="underline">Chromium browsers</span>... i'll
+                                    try to make it work and look as good on Firefox as much as possible!</p>
                             </li>
                             <li>
-                                <p>> uses javascript for cool stuff <small>like the weird freaky cat on the splash page...</small></p>
+                                <p>> uses javascript for cool stuff <small>like the weird freaky cat on the splash
+                                        page...</small></p>
                             </li>
                             <li>
-                                <p>> hosted by <strong class="lightbold">miamo</strong>, thank you so much my dear friend!! you can check his work at <a href="https://miamoalex.net" target="_blank">miamoalex.net</a></p>
+                                <p>> hosted by <strong class="lightbold">miamo</strong>, thank you so much my dear
+                                    friend!! you can check his work at <a href="https://miamoalex.net"
+                                        target="_blank">miamoalex.net</a></p>
                             </li>
                         </ul>
                     </div>
@@ -100,25 +152,25 @@
             </section>
             <section class="box currently">
                 <h2>Currently</h2>
-                <p class="subtitle">~ last updated on 25.jan.25 ~</p>
+                <p class="subtitle">~ last updated on 14.apr.25 ~</p>
                 <ul class="currently--list">
                     <li class="currently--list--item">
                         <h3>doing...</h3>
                         <div class="currently--list--item--bubble">
-                            <p>a big <strong>trip around <span style="color:tomato">Japan</span></strong> with friends! <small>we're going to visit Hakodate, Sapporo, Osaka, Kyoto and Tokyo!</small></p>
+                            <p><strong>new internship</strong> in Paris + seing my friends a lot!!</p>
                         </div>
                     </li>
                     <li class="currently--list--item">
                         <h3>working on...</h3>
                         <div class="currently--list--item--bubble">
-                            <p>hopefully <strong>this website</strong> when i come back!!</p>
+                            <p><strong>this website</strong> <small>when i have some spare time</small></p>
                         </div>
                     </li>
                     <li class="currently--list--item">
                         <h3>watching...</h3>
                         <div class="currently--list--item--bubble">
                             <p>
-                                Severance S2 <small>(amazing show)</small>
+                                Game of Thrones <small>(again)</small>
                             </p>
                         </div>
                     </li>
@@ -126,7 +178,9 @@
                         <h3>playing...</h3>
                         <div class="currently--list--item--bubble">
                             <p>
-                                <a class="clickable" href="https://store.steampowered.com/app/1229380/Everhood/" target="_blank">Everhood</a> <small>on my Steam Deck</small>, Pokemon TGC
+                                just finished <a class="clickable"
+                                    href="https://store.steampowered.com/app/1726190/No_Straight_Roads_Encore_Edition/"
+                                    target="_blank">No Straight Roads</a>, extremely charming game
                             </p>
                         </div>
                     </li>
@@ -134,7 +188,7 @@
                         <h3>reading...</h3>
                         <div class="currently--list--item--bubble">
                             <p>
-                                <a class="clickable" href="https://www.amazon.com/-/en/David-Thomas/dp/0135957052" target="_blank">The Pragmatic Programmer: Your Journey to Mastery, 20th Anniversary Edition</a> <small>on my phone lol...</small>
+                                not much rn...
                             </p>
                         </div>
                     </li>
@@ -142,7 +196,8 @@
                         <h3>listening to...</h3>
                         <div class="currently--list--item--bubble">
                             <p>
-                                <a class="clickable" id="tracktitle"></a> by <a class="clickable" href="#" id="trackartist"></a>
+                                <a class="clickable" id="tracktitle"></a> by <a class="clickable" href="#"
+                                    id="trackartist"></a>
                             </p>
                         </div>
                     </li>
@@ -162,15 +217,18 @@
                     <li>
                         <div class="goofy_ah_webring">
                             <p>This website is part of the <br><strong>Goofy Ah Webring</strong></p>
-                            <img class="goofy_ah_webring--mascot" src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-mascotte.png">
+                            <img class="goofy_ah_webring--mascot"
+                                src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-mascotte.png">
                             <div class="goofy_ah_webring--links">
                                 <a href="https://miamoalex.net/">
-                                    <img class="smilies" src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-left.png">
+                                    <img class="smilies"
+                                        src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-left.png">
                                     <p>miamoalex</p>
                                 </a>
                                 <a href="https://crylotte.neocities.org/">
                                     <p>crylotte</p>
-                                    <img class="smilies" src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-right.png">
+                                    <img class="smilies"
+                                        src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-right.png">
                                 </a>
                             </div>
                         </div>
@@ -180,37 +238,56 @@
             <section class="box about_me">
                 <h2>ABOUT ME <img class="smilies" src="/$src/img/icon/cat_coding.gif" alt=""></h2>
                 <div class="about_me--intro">
-                    <p>my name is <strong>Enzo</strong> and i'm <strong class="lightbold">the webmaster</strong> of this little internet plaza! i'm a 23yo French "guy", soon-to-be creative engineer, currently studying computer science in Japan.</p>
+                    <p>my name is <strong>Enzo</strong> and i'm <strong class="lightbold">the webmaster</strong> of this
+                        little internet plaza! i'm a 23yo French "guy", soon-to-be creative engineer, currently studying
+                        computer science in Japan.</p>
                 </div>
-                <p>i'm completely unable to write anything substantial about myself, so <span class="underline">here's a list of random things in a completely indefinite order</span>:</p>
+                <p>i'm completely unable to write anything substantial about myself, so <span class="underline">here's a
+                        list of random things in a completely indefinite order</span>:</p>
                 <ul>
                     <li>
-                        <p>> i love web & game development, cats, listening to music, traveling, learning new stuff and iced matcha lattes <small>(quoted from my Github bio lol)</small></p>
+                        <p>> i love web & game development, cats, listening to music, traveling, learning new stuff and
+                            iced matcha lattes <small>(quoted from my Github bio lol)</small></p>
                     </li>
                     <li>
-                        <p>> i'm also very passionate about the independent web and the resurgence of <strong>personal websites</strong>!</p>
+                        <p>> i'm also very passionate about the independent web and the resurgence of <strong>personal
+                                websites</strong>!</p>
                     </li>
                     <li>
                         <p>> i love art! art is so cool! <span class="float">yipee!</span></p>
                     </li>
                     <li>
-                        <p>> i have an <strong class="lightbold">extremely feeble attention</strong>. i went to check how "yipee" was written, completely forgot what i was doing initially and lost 30min surfing the internet...</p>
+                        <p>> i have an <strong class="lightbold">extremely feeble attention</strong>. i went to check
+                            how "yipee" was written, completely forgot what i was doing initially and lost 30min surfing
+                            the internet...</p>
                     </li>
                     <li>
                         <p>> I usually don't use capital letters to start sentences</p>
                     </li>
                     <li>
-                        <p>> my pronouns are <span class="underline"><i>"he/him"</i></span> but i don't actually care so you can call me anything</p>
+                        <p>> my pronouns are <span class="underline"><i>"he/him"</i></span> but i don't actually care so
+                            you can call me anything</p>
                     </li>
                     <li>
-                        <p>> sometimes, i think about the fact that there's a nearly infinite amount of content (video, music, games, etc.), and that i will never stop discovering new stuff i like... <small>it makes me really euphoric!!</small></p>
+                        <p>> sometimes, i think about the fact that there's a nearly infinite amount of content (video,
+                            music, games, etc.), and that i will never stop discovering new stuff i like... <small>it
+                                makes me really euphoric!!</small></p>
                     </li>
                     <li>
-                        <p>> <strong class="lightbold">i can't stop yapping</strong> about things i care about (hence this website, where i will essentially do this lol)</p>
+                        <p>> <strong class="lightbold">i can't stop yapping</strong> about things i care about (hence
+                            this website, where i will essentially do this lol)</p>
                     </li>
                 </ul>
                 <p>you've read all of this? means a lot... here's my socials as a reward hehe:</p>
-                <p class="about_me--socials"><a href="https://github.com/L0R3Z" target="_blank">GitHub</a> | <a href="https://bsky.app/profile/did:plc:b43omccnxqdvqrfxkpoiis2p" target="_blank">BlueSky</a> | <a href="https://www.last.fm/user/MrzozoMusic" target="_blank">Lastfm</a> | <a href="https://rateyourmusic.com/~L0R3Z" target="_blank">RYM</a> | <a href="https://mrzozo.itch.io/" target="_blank">itch.io</a> | <a href="https://www.backloggd.com/u/L0R3Z/" target="_blank">backloggd</a> | <a href="https://soundcloud.com/l0r3zdr34m3r" target="_blank">soundcloud</a> | <a href="https://www.serializd.com/user/L0R3Z/profile" target="_blank">serializd</a></p>
+                <p class="about_me--socials"><a href="https://github.com/L0R3Z" target="_blank">GitHub</a> | <a
+                        href="https://bsky.app/profile/did:plc:b43omccnxqdvqrfxkpoiis2p" target="_blank">BlueSky</a> |
+                    <a href="https://www.last.fm/user/MrzozoMusic" target="_blank">Lastfm</a> | <a
+                        href="https://rateyourmusic.com/~L0R3Z" target="_blank">RYM</a> | <a
+                        href="https://mrzozo.itch.io/" target="_blank">itch.io</a> | <a
+                        href="https://www.backloggd.com/u/L0R3Z/" target="_blank">backloggd</a> | <a
+                        href="https://soundcloud.com/l0r3zdr34m3r" target="_blank">soundcloud</a> | <a
+                        href="https://www.serializd.com/user/L0R3Z/profile" target="_blank">serializd</a>
+                </p>
 
 
                 <!-- <div style="border:1px solid #999;border-radius:6px;padding:6px;background:#fff;color:#000;min-width:200px;max-width:360px;">
@@ -286,23 +363,41 @@
             <div class="codeofhonor--container">
                 <section class="box" id="codeofhonor">
                     <h2>WEBSITE'S CODE OF HONOR</h2>
-                    <p id="codeofhonor--description"><strong class="lightbold">the core principles that i want to follow while making this website.</strong> those are really important to me, here or in my personal life :)</p>
+                    <p id="codeofhonor--description"><strong class="lightbold">the core principles that i want to follow
+                            while making this website.</strong> those are really important to me, here or in my personal
+                        life :)</p>
                     <ul>
                         <li>
                             <p><strong>1. make value out of everyday life.</strong></p>
-                            <p>this is actually the main purpose of this website. to stop saying "my life is boring" and start realizing that it's not at all!</p>
+                            <p>this is actually the main purpose of this website. to stop saying "my life is boring" and
+                                start realizing that it's not at all!</p>
                         </li>
                         <li>
-                            <p><strong>2. do something.</strong><br>i've spent so many days doing nothing, "just chilling" but feeling awful about it at the same time, despite the fact that i have so many interests and passions and i love to create! so let's do something instead</p>
+                            <p><strong>2. do something.</strong><br>i've spent so many days doing nothing, "just
+                                chilling" but feeling awful about it at the same time, despite the fact that i have so
+                                many interests and passions and i love to create! so let's do something instead</p>
                         </li>
                         <li>
-                            <p><strong>3. consume less, create more.</strong><br>i have a lot of interests, and thus i consume a lot of media. i want to give myself more time to reflect on the things i consume, instead of drowning them in an ocean of content. if i truly enjoy something, i want to create something out of it!</p>
+                            <p><strong>3. consume less, create more.</strong><br>i have a lot of interests, and thus i
+                                consume a lot of media. i want to give myself more time to reflect on the things i
+                                consume, instead of drowning them in an ocean of content. if i truly enjoy something, i
+                                want to create something out of it!</p>
                         </li>
                         <li>
-                            <p><strong>4. the process is more important than the result.</strong><br>i've been drown to use AI more and more for my academic work as i study in this field, and it overlapped on my personal projects. i realized that i didn't like it at all! the thing is: i don't care about the final product, what i like is creating, so there's no point in using AI to negate the thing that i like doing! still, i'll use AI every now and then, but as a search engine, as a tool to learn, and not as something to replace my creativity.</p>
+                            <p><strong>4. the process is more important than the result.</strong><br>i've been drown to
+                                use AI more and more for my academic work as i study in this field, and it overlapped on
+                                my personal projects. i realized that i didn't like it at all! the thing is: i don't
+                                care about the final product, what i like is creating, so there's no point in using AI
+                                to negate the thing that i like doing! still, i'll use AI every now and then, but as a
+                                search engine, as a tool to learn, and not as something to replace my creativity.</p>
                         </li>
                         <li>
-                            <p><strong>5. be the one who inspires.</strong><br>i've been mind-blown and inspired by so many people and things in my life. this includes some personal websites. this time, i want to be the one who inspire others! thus, everything i'll make here will be open source. so you're free to take inspiration or take bits of code from my website if you need. as long as you don't copy the whole thing <small>(and link to my website somewhere on your website... if you want...)</small></p>
+                            <p><strong>5. be the one who inspires.</strong><br>i've been mind-blown and inspired by so
+                                many people and things in my life. this includes some personal websites. this time, i
+                                want to be the one who inspire others! thus, everything i'll make here will be open
+                                source. so you're free to take inspiration or take bits of code from my website if you
+                                need. as long as you don't copy the whole thing <small>(and link to my website somewhere
+                                    on your website... if you want...)</small></p>
                         </li>
                     </ul>
                 </section>
@@ -360,15 +455,19 @@
             <img class="badge8831" src="/$src/img/8831/upallnight.gif" alt="up all night">
         </aside>
         <aside id="legal">
-            <p style="text-align: center; font-size: 80%;">L0R3Z 2025 // Hosted by Miamo on the world wide web since <i>29.jan.2023</i>
+            <p style="text-align: center; font-size: 80%;">L0R3Z 2025 // Hosted by Miamo on the world wide web since
+                <i>29.jan.2023</i>
             </p>
         </aside>
     </footer>
 
+    <audio id="audio" preload="auto"></audio>
+
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="/$src/script/lastfm_lastplayed.js" defer></script>
-    <script src="/$src/script/featured_video.js" defer></script>
+    <!-- <script src="/$src/script/featured_video.js" defer></script> -->
+    <script src="/$src/script/audio_player.js" defer></script>
 </body>
 
 </html>

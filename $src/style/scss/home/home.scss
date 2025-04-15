@@ -92,6 +92,84 @@ main {
     display: grid;
     grid-template-columns: 0.8fr 2.9fr 1.2fr;
     gap: 0.4em 0.4em;
+
+    &--left_block {
+        display: flex;
+        flex-direction: column;
+        transform: rotate(-2deg);
+    }
+}
+
+/* MUSICPLAYER */
+.music_player {
+    padding: 0;
+    border: double 8px #759EED;
+
+    &--title {
+        color: white;
+        display: flex;
+        justify-content: center;
+        height: 2rem;
+        background: radial-gradient(circle, #2971EA 14%, #759EED 100%);
+        align-items: center;
+    }
+
+    .smilies {
+        padding-right: .4rem;
+    }
+
+    &--main {
+        background-color: white;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        height: 8rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &--track_name {
+        z-index: 1;
+        color: white;
+        margin: .2em;
+        text-shadow: 0px 0px 5px rgba(0, 94, 255, 1),
+        -1px -1px 5px rgba(10, 32, 75, 0.684);
+    }
+
+    &--controls {
+        height: 2em;
+        display: flex;
+        justify-content: center;
+        gap: .2em;
+        align-items: end;
+        padding-bottom: .4em;
+        z-index: 1;
+        background: linear-gradient(to bottom, rgba(117, 158, 237, 0) 0%, rgba(41, 113, 234, 0.8) 90%);
+
+        img {
+            height: 100%;
+            height: 1em;
+            cursor: pointer;
+            transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+            &:hover {
+                transform: scale(110%);
+            }
+
+            &:active {
+                transform: scaleX(90%) scaleY(70%);
+            }
+        }
+    }
+
+    &--background {
+        position: absolute;
+        filter: blur(2px);
+        z-index: 0;
+        top: -0.5em;
+        min-height: 100%;
+        object-fit: cover;
+    }
 }
 
 /* MENU */
@@ -100,8 +178,8 @@ main {
     overflow: auto;
     padding: 0.5em;
     /* width: 27%; */
-    margin-top: 8vh;
-    transform: rotate(-2deg);
+    margin-top: .2em;
+    height: 100%;
 
     &--section {
         margin-bottom: 0.5em;
@@ -202,8 +280,8 @@ main {
 .introduction {
     display: grid;
     height: inherit;
-        min-height: inherit;
-        width: 100%;
+    min-height: inherit;
+    width: 100%;
     // overflow: auto;
     // transform: rotate(3deg);
 
@@ -286,9 +364,11 @@ main {
                 // border: outset 2px $color-border;
                 // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             }
+
             &:nth-child(odd) {
                 justify-self: left;
             }
+
             &:nth-child(even) {
                 justify-self: right;
                 text-align: right;
