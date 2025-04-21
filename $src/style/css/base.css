@@ -21,6 +21,10 @@
   font-family: "simple";
   src: url("/$src/font/Simple.ttf");
 }
+@font-face {
+  font-family: "yomogi";
+  src: url("/$src/font/Yomogi.ttf");
+}
 /* ------- */
 /* GENERAL */
 /* ------- */
@@ -59,6 +63,7 @@ a:hover {
 img {
   -o-object-fit: contain;
      object-fit: contain;
+  image-rendering: pixelated;
 }
 
 strong {

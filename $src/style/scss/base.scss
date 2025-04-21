@@ -16,6 +16,7 @@
 @include font-face("kiwisoda", "/$src/font/KiwiSoda.ttf");
 @include font-face("minecraftia", "/$src/font/Minecraftia-Regular.ttf");
 @include font-face("simple", "/$src/font/Simple.ttf");
+@include font-face("yomogi", "/$src/font/Yomogi.ttf");
 
 /* ------- */
 /* GENERAL */
@@ -25,6 +26,20 @@
     font-size: 16px;
     font-family: ms pgothic;
 }
+
+// ::-webkit-scrollbar {
+//     width: 7px;
+//     height: 7px;
+// }
+
+// ::-webkit-scrollbar-track {
+//     background: #CDDBFF;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background: #99b6ff;
+//     /* background: #CDDBFF; */
+// }
 
 html {
     scrollbar-color: $color-scrollbar $color-background;
@@ -58,6 +73,7 @@ a {
 
 img {
     object-fit: contain;
+    image-rendering: pixelated;
 }
 
 strong {

@@ -55,6 +55,7 @@ main {
     img {
         width: 100%;
         transform: scaleX(-1);
+        image-rendering:unset;
     }
 }
 

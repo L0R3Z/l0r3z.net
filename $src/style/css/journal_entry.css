@@ -1,0 +1,58 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-family: yomogi, serif;
+  background-image: url("/$src/img/bg/journal_box2.png");
+  background-repeat: repeat;
+  background-size: initial;
+}
+
+.journal {
+  position: relative;
+  overflow: auto;
+  color: #000000;
+  padding: 1.5em;
+  padding-right: 1em;
+  padding-top: 0;
+  max-width: 35em;
+}
+.journal--entry {
+  padding-top: 1.5em;
+}
+.journal--title_container {
+  border-top: 2px dashed #000000;
+  border-bottom: 2px dashed #000000;
+  text-align: right;
+  padding: 0.5em;
+  margin-bottom: 1.2em;
+  line-height: 1;
+}
+.journal--content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  line-height: 125%;
+}
+.journal--content mark {
+  background: #A1FDD6;
+}
+.journal--content--img_div {
+  position: relative;
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+.journal--content--img_div img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 0;
+}/*# sourceMappingURL=journal_entry.css.map */

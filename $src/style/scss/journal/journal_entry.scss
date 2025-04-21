@@ -1,0 +1,73 @@
+$color-background-feeling-menu: #34C1E0;
+$color-text-feeling-menu: #094B59;
+$color-background-nav-menu: #FE5959;
+$color-text-nav-menu: #FFFFFF;
+$color-background-list-menu: #8459FE;
+$color-text-list-menu: #FFFFFF;
+$color-text-journal: #000000;
+$color-link-journal: #FB60E2;
+$color-highlight-journal: #A1FDD6;
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-family: yomogi, serif;
+    background-image: url("/$src/img/bg/journal_box2.png");
+    background-repeat: repeat;
+    background-size: initial;
+}
+
+.journal {
+    position: relative;
+    overflow: auto;
+    color: $color-text-journal;
+    padding: 1.5em;
+    padding-right: 1em;
+    padding-top: 0;
+    max-width: 35em;
+
+    &--entry {
+        padding-top: 1.5em;
+    }
+
+    &--title_container {
+        border-top: 2px dashed $color-text-journal;
+        border-bottom: 2px dashed $color-text-journal;
+        text-align: right;
+        padding: .5em;
+        margin-bottom: 1.2em;
+        line-height: 1;
+        // background-image: url("/$src/img/bg/splash1.png");
+        // background-size: cover;
+    }
+
+    &--content {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: .8em;
+        line-height: 125%;
+
+        mark {
+            background: $color-highlight-journal;
+        }
+
+        &--img_div {
+            position: relative;
+            display: flex;
+            width: 100%;
+            gap: 1rem;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                min-width: 0;
+            }
+        }
+    }
+}

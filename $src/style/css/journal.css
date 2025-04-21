@@ -1,0 +1,198 @@
+/* ------- */
+/* GENERAL */
+/* ------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/$src/img/bg/journal.png");
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-family: yomogi, serif;
+  padding-top: 3vh;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  transform: rotateZ(-1deg);
+  width: 32em;
+}
+
+.deco {
+  pointer-events: none;
+  opacity: 65%;
+}
+.deco--cinnamoroll {
+  position: absolute;
+  z-index: 10;
+  bottom: -5em;
+  left: -15em;
+}
+.deco--pen {
+  position: absolute;
+  z-index: 10;
+  bottom: -5em;
+  right: -12em;
+  width: 15em;
+}
+
+.journal,
+.feeling_menu,
+.nav_menu--button,
+.list_menu {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.journal {
+  position: relative;
+  height: 72vh;
+  width: 100%;
+  border: none;
+}
+
+.top_menu {
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.top_menu .feeling_menu {
+  display: flex;
+  background-color: #34C1E0;
+  color: #094B59;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  padding: 0.5em;
+  height: 4.5em;
+}
+.top_menu .feeling_menu--img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 14px;
+}
+.top_menu .feeling_menu--text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0.8em;
+  font-size: 0.7em;
+}
+.top_menu .nav_menu {
+  display: flex;
+}
+.top_menu .nav_menu--button {
+  background-color: #FE5959;
+  color: #FFFFFF;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  padding: 0em 1em;
+  margin-left: 0.5em;
+  height: 2em;
+  transform: translateY(0.5em);
+  z-index: 0;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.top_menu .nav_menu--button--disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+.top_menu .nav_menu--button:hover {
+  transform: translateY(0.2em);
+}
+.top_menu .list_menu {
+  position: absolute;
+  top: 5.5em;
+  left: -11em;
+  width: 10em;
+  background-color: #8459FE;
+  color: #FFFFFF;
+  border-bottom-left-radius: 22px;
+}
+.top_menu .list_menu--title {
+  position: absolute;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  left: -2.2em;
+  background-color: #8459FE;
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
+  padding: 0.5em 0.25em 0.5em 0.5em;
+  border-right: 1px dashed #FFFFFF;
+}
+.top_menu .list_menu--list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+.top_menu .list_menu--list li {
+  margin-bottom: 0.5em;
+  font-size: 0.75em;
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.top_menu .list_menu--list li:hover {
+  transform: translateX(0.5em);
+}
+.top_menu .list_menu--list li.selected {
+  transform: translateX(0.75em);
+}
+.top_menu .list_menu--list a {
+  color: inherit;
+}
+.top_menu .list_menu--list a:hover {
+  text-shadow: none;
+}
+.top_menu .list_menu--list--date {
+  text-decoration: underline;
+}
+
+@media (max-width: 950px) {
+  main {
+    transform: none;
+    width: initial;
+    max-width: 32em;
+  }
+  .deco--cinnamoroll {
+    width: 15em;
+    left: 0;
+    bottom: -2em;
+  }
+  .deco--pen {
+    width: 10em;
+    right: 0;
+    bottom: -2em;
+  }
+  .journal {
+    height: 80vh;
+  }
+  .top_menu {
+    display: flex;
+  }
+  .top_menu .list_menu {
+    position: initial;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 0;
+    height: 5em;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: auto;
+    margin-right: 3em;
+  }
+  .top_menu .list_menu--title {
+    display: none;
+  }
+  .top_menu .feeling_menu {
+    display: none;
+  }
+}/*# sourceMappingURL=journal.css.map */
