@@ -67,7 +67,7 @@ main {
 
 .chains {
     z-index: 99;
-    position: absolute;
+    position: fixed;
     background-image: url("/$src/img/deco/chains.png");
     height: 100%;
     width: 100%;

@@ -7,9 +7,11 @@ $color-text-list-menu: #FFFFFF;
 $color-text-journal: #000000;
 $color-link-journal: #FB60E2;
 $color-highlight-journal: #A1FDD6;
+
 html {
     scroll-behavior: smooth;
-  }
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -59,15 +61,57 @@ body {
 
         &--img_div {
             position: relative;
-            display: flex;
-            width: 100%;
-            gap: 1rem;
+            // width: 100%;
+            padding: 1rem;
+            margin: 0 2.5em 0 2.5em;
+            background-color: #ffffff85;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 6px, #cbfefea1 6px, #cbfefea1 12px);
+            background-size: auto auto;
+            box-sizing: border-box;
+            border: 1px dashed #496d6d;
+            border-radius: 4px;
+            transform: rotateZ(1deg);
+
+            &_left {
+                transform: rotateZ(-1deg);
+            }
+
+            &_small {
+                margin: 0 5em 0 5em;
+            }
+
+            &--multiple {
+                display: flex;
+                gap: 1rem;
+            }
+
+            &--clip {
+                background: url("/$src/img/journal/clip01.png") no-repeat;
+                height: 62px;
+                position: absolute;
+                right: .5rem;
+                top: -.8rem;
+                width: 1.6rem
+            }
 
             img {
                 width: 100%;
                 object-fit: cover;
                 min-width: 0;
+                // opacity: 0.9;
+            }
+
+            p {
+                text-align: center;
+                font-size: .8em;
+                margin-top: .4rem;;
             }
         }
+    }
+}
+
+@media (max-width: 500px) {
+    .journal--content--img_div {
+        margin: 0;
     }
 }

@@ -43,6 +43,7 @@ main {
         z-index: 10;
         bottom: -5em;
         left: -15em;
+        width: 20em;
     }
 
     &--pen {
@@ -87,8 +88,6 @@ main {
         height: 4.5em;
 
         &--img {
-            // height: 4em;
-            // width: 4em;
             object-fit: cover;
             border-radius: 14px;
         }
@@ -188,7 +187,6 @@ main {
 
 @media (max-width: 950px) {
     main {
-        // position: initial;
         transform: none;
         width: initial;
         max-width: 32em;
@@ -196,15 +194,11 @@ main {
 
     .deco {
         &--cinnamoroll {
-            width: 15em;
-            left: 0;
-            bottom: -2em;
+            display: none;;
         }
 
         &--pen {
-            width: 10em;
-            right: 0;
-            bottom: -2em;
+            display: none;;
         }
     }
 
@@ -213,21 +207,16 @@ main {
     }
 
     .top_menu {
-        // position: static;
         display: flex;
-        // justify-content: space-evenly;
-        // width: 85%;
 
         .list_menu {
             position: initial;
-            // top: 0;
             border-top-left-radius: 22px;
             border-top-right-radius: 22px;
             border-bottom-left-radius: 0;
             height: 5em;
             overflow: scroll;
             overflow-x: hidden;
-            // width: 100%;
             width: auto;
             margin-right: 3em;
 

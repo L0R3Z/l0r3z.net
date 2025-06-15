@@ -33,6 +33,7 @@ main {
   z-index: 10;
   bottom: -5em;
   left: -15em;
+  width: 20em;
 }
 .deco--pen {
   position: absolute;
@@ -163,14 +164,10 @@ main {
     max-width: 32em;
   }
   .deco--cinnamoroll {
-    width: 15em;
-    left: 0;
-    bottom: -2em;
+    display: none;
   }
   .deco--pen {
-    width: 10em;
-    right: 0;
-    bottom: -2em;
+    display: none;
   }
   .journal {
     height: 80vh;
