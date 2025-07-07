@@ -381,7 +381,7 @@ main {
     min-height: 150px;
     width: 100%;
     display: grid;
-    grid-template-columns: 0.6fr 0.9fr 0.9fr 0.6fr;
+    grid-template-columns: 0.5fr 1fr 0.8fr;
     gap: 0.4em 0.4em;
 }
 
@@ -569,12 +569,18 @@ main {
 
 /* LISTENING TO */
 .listening_to {
+    z-index: 50;
+    position: absolute;
     display: flex;
     text-align: center;
     flex-direction: column;
-    overflow: auto;
+    // overflow: auto;
     overflow: hidden;
     padding: 0.5em;
+    width: 7em;
+    top: 10.5em;
+    right: -5.75em;
+    transform: rotateZ(5deg);
 
     h2 {
         font-size: 0.4em;
@@ -599,7 +605,7 @@ main {
 
     #cd {
         position: absolute;
-        width: 4.22em;
+        width: 4.15em;
         top: 0.1em;
         right: 0;
         animation: cdspin 3s linear infinite;
@@ -667,5 +673,11 @@ footer {
         text-shadow:
             1px 1px 5px rgb(255, 255, 255),
             -1px -1px 5px rgb(26, 102, 254);
+    }
+}
+
+@media (max-width: 950px) {
+    .listening_to {
+        display: none;
     }
 }

@@ -19,8 +19,17 @@
     <div class="chains">
         <!-- <img src="/$src/img/deco/chains.png"> -->
     </div>
+    
     <!-- MAIN ELEMENTS -->
     <main>
+        <section class="box listening_to" style="user-select: none; position: absolute;">
+        <h2>Listening to</h2>
+        <p><a class="clickable" id="tracktitle"></a> by <a class="clickable" href="#" id="trackartist"></a></p>
+        <div id="cdcontainer">
+            <img id="trackart" src="#" alt="album cover" style="user-select: none; pointer-events: none;">
+            <img id="cd" src="/$src/img/deco/cd.png" alt="spinning cd">
+        </div>
+    </section>
         <!-- FIRST BLOCK OF CONTENT -->
         <div class="block first_block">
 
@@ -80,13 +89,18 @@
                 <!-- HEADER -->
                 <header class="header">
                     <aside class="box header--container">
-                        <h1 class="header--container--title">L0R3Z - HOME</h1>
+                        <h1 class="header--container--title">l0r3z - HOME</h1>
                         <p class="header--container--subtext">I want to go <a href="/home">>home</a>...</p>
                     </aside>
                 </header>
                 <img class="header--logo" src="/$src/img/deco/l0r3z1-small.png" alt="L0R3Z">
                 <!-- INTRODUCTION -->
                 <div class="box introduction--container">
+                    <ul>
+                        <li>
+                            <p>where am i?</p>
+                        </li>
+                    </ul>
                     <div class="where_am_i">
                         <img class="mecat float" src="/$src/img/deco/mecat/mecat-small.png" alt="silly guy">
                         <div class="where_am_i--text">
@@ -160,7 +174,7 @@
                         <h3>working on...</h3>
                         <div class="currently--list--item--bubble">
                             <p><strong>this website</strong> <small>when i have some spare time</small>
-                            + completing my bucketlist</p>
+                                + completing my bucketlist</p>
                         </div>
                     </li>
                     <li class="currently--list--item">
@@ -175,7 +189,8 @@
                         <h3>playing...</h3>
                         <div class="currently--list--item--bubble">
                             <p>
-                                just finished <strong>the Half Life series</strong> <small>(except Alyx)</small>, now i get why people
+                                just finished <strong>the Half Life series</strong> <small>(except Alyx)</small>, now i
+                                get why people
                                 are upset about HL3 not coming out lol
                             </p>
                         </div>
@@ -214,17 +229,17 @@
                         <div class="goofy_ah_webring">
                             <p>This website is part of the <br><strong>Goofy Ah Webring</strong></p>
                             <img class="goofy_ah_webring--mascot"
-                                src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-mascotte.png">
+                                src="/$src/img/icon/goofy_ah_webring/goofy-ah-mascotte.png">
                             <div class="goofy_ah_webring--links">
                                 <a href="https://miamoalex.net/">
                                     <img class="smilies"
-                                        src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-left.png">
+                                        src="/$src/img/icon/goofy_ah_webring/goofy-ah-left.png">
                                     <p>miamoalex</p>
                                 </a>
                                 <a href="https://crylotte.neocities.org/">
                                     <p>crylotte</p>
                                     <img class="smilies"
-                                        src="https://www.l0r3z.net/src/img/goofy_ah_webring/goofy-ah-right.png">
+                                        src="/$src/img/icon/goofy_ah_webring/goofy-ah-right.png">
                                 </a>
                             </div>
                         </div>
@@ -399,14 +414,6 @@
                 </section>
                 <img id="codeofhonor--gif" src="/$src/img/gif/codeofhonor.gif">
             </div>
-            <section class="box listening_to">
-                <h2>Listening to</h2>
-                <p><a class="clickable" id="tracktitle"></a> by <a class="clickable" href="#" id="trackartist"></a></p>
-                <div id="cdcontainer">
-                    <img id="trackart" src="#">
-                    <img id="cd" src="/$src/img/deco/cd.png" alt="">
-                </div>
-            </section>
         </div>
 
         <!-- <div class="block third_block">
@@ -464,6 +471,13 @@
     <script src="/$src/script/lastfm_lastplayed.js" defer></script>
     <!-- <script src="/$src/script/featured_video.js" defer></script> -->
     <script src="/$src/script/audio_player.js" defer></script>
+    <script src="/$src/script/draggable_maker.js" defer></script>
+    <script defer>
+        window.addEventListener('DOMContentLoaded', () => {
+            const listeningTo = document.querySelector('.listening_to');
+            makeDraggable(listeningTo);
+        });
+    </script>
 </body>
 
 </html>
