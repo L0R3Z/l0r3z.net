@@ -6,8 +6,7 @@
 - dev-tooling upgrade => package.json, pre-commit git hook that recompiles SCSS to CSS automatically before every commit for convenience, code linter for js and scss
 - some code cleanup (horrible commit diff lol)
 - refactoring some stuff
-- status update 1 year later lol
-- moved unused/WIP scripts
+- new status update 1 year later lol
 
 ## 1.18
 - new! guestbook available in the homepage menu
