@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit
+#
+# Auto-compiles SCSS -> CSS before every commit, so compiled CSS never drifts
+# out of sync with the SCSS sources.
+#
+# One-time setup:
+#   git config core.hooksPath .githooks
+#   chmod +x .githooks/pre-commit
+#   npm install
+
+set -euo pipefail
+
+# Only run if at least one staged file is under _src/style/scss/
+if ! git diff --cached --name-only --diff-filter=ACM | grep -q '^\_src/style/scss/.*\.scss$'; then
+  exit 0
+fi
+
+echo "[pre-commit] Staged SCSS changes detected, recompiling CSS..."
+
+if [ ! -d node_modules ]; then
+  echo "[pre-commit] node_modules missing - run 'npm install' first." >&2
+  exit 1
+fi
+
+npm run --silent build:css
+
+# Re-stage the freshly compiled CSS/maps so they land in the same commit.
+git add '_src/style/css/'*.css '_src/style/css/'*.css.map
+
+echo "[pre-commit] CSS recompiled and staged."

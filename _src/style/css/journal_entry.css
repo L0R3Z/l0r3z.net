@@ -1,0 +1,94 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-family: yomogi, serif;
+  background-image: url("/_src/img/bg/journal_box2.png");
+  background-repeat: repeat;
+  background-size: initial;
+}
+
+.journal {
+  position: relative;
+  overflow: auto;
+  color: #000000;
+  padding: 1.5em;
+  padding-right: 1em;
+  padding-top: 0;
+  max-width: 35em;
+}
+.journal--entry {
+  padding-top: 1.5em;
+}
+.journal--title_container {
+  border-top: 2px dashed #000000;
+  border-bottom: 2px dashed #000000;
+  text-align: right;
+  padding: 0.5em;
+  margin-bottom: 1.2em;
+  line-height: 1;
+}
+.journal--content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  line-height: 125%;
+}
+.journal--content mark {
+  background: #A1FDD6;
+}
+.journal--content--img_div {
+  position: relative;
+  padding: 1rem;
+  margin: 0 2.5em 0 2.5em;
+  background-color: rgba(255, 255, 255, 0.5215686275);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(203, 254, 254, 0.631372549) 6px, rgba(203, 254, 254, 0.631372549) 12px);
+  background-size: auto auto;
+  box-sizing: border-box;
+  border: 1px dashed #496d6d;
+  border-radius: 4px;
+  transform: rotateZ(1deg);
+}
+.journal--content--img_div_left {
+  transform: rotateZ(-1deg);
+}
+.journal--content--img_div_small {
+  margin: 0 5em 0 5em;
+}
+.journal--content--img_div--multiple {
+  display: flex;
+  gap: 1rem;
+}
+.journal--content--img_div--clip {
+  background: url("/_src/img/journal/clip01.png") no-repeat;
+  height: 62px;
+  position: absolute;
+  right: 0.5rem;
+  top: -0.8rem;
+  width: 1.6rem;
+}
+.journal--content--img_div img {
+  width: 100%;
+  object-fit: cover;
+  min-width: 0;
+}
+.journal--content--img_div p {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 500px) {
+  .journal--content--img_div {
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=journal_entry.css.map */

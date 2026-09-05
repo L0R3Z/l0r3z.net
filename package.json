@@ -1,0 +1,20 @@
+{
+  "name": "l0r3z.net",
+  "private": true,
+  "description": "Local dev tooling only (SCSS compilation + linting). This is a static site with no bundler/build step — nothing here ships to the browser.",
+  "scripts": {
+    "build:css": "sass \\_src/style/scss/reset.scss:\\_src/style/css/reset.css \\_src/style/scss/base.scss:\\_src/style/css/base.css \\_src/style/scss/home/home.scss:\\_src/style/css/home.css \\_src/style/scss/journal/journal.scss:\\_src/style/css/journal.css \\_src/style/scss/journal/journal_entry.scss:\\_src/style/css/journal_entry.css \\_src/style/scss/splash/splash.scss:\\_src/style/css/splash.css --source-map",
+    "build:css:watch": "npm run build:css -- --watch",
+    "lint:js": "eslint _src/script",
+    "lint:css": "stylelint \"_src/style/scss/**/*.scss\"",
+    "lint": "npm run lint:js && npm run lint:css"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.10.0",
+    "globals": "17.12.0",
+    "sass": "1.104.0",
+    "stylelint": "17.15.0",
+    "stylelint-config-recommended-scss": "17.0.0"
+  }
+}
