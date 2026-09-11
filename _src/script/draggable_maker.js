@@ -1,21 +1,65 @@
 function makeDraggable(div) {
   let isDragging = false;
-  let offsetX, offsetY;
+  let startClientX, startClientY, startLeft, startTop;
 
   div.style.position = 'absolute';
   div.style.cursor = 'move';
   div.style.touchAction = 'none';
 
+  const getContainingBlock = () => div.offsetParent || document.documentElement;
+
+  const clampPosition = (left, top) => {
+    const containingBlock = getContainingBlock();
+    const containingBlockRect = containingBlock.getBoundingClientRect();
+    const minLeft = -containingBlockRect.left;
+    const maxLeft = Math.max(
+      minLeft,
+      window.innerWidth - containingBlockRect.left - div.offsetWidth,
+    );
+
+    return {
+      left: Math.min(Math.max(left, minLeft), maxLeft),
+      top: Math.max(top, -containingBlockRect.top),
+    };
+  };
+
   const startDrag = (clientX, clientY) => {
+    startClientX = clientX;
+    startClientY = clientY;
+    startLeft = div.offsetLeft;
+    startTop = div.offsetTop;
+    div.style.right = 'auto';
+    div.style.left = startLeft + 'px';
+    div.style.top = startTop + 'px';
     isDragging = true;
-    offsetX = clientX - div.offsetLeft;
-    offsetY = clientY - div.offsetTop;
   };
 
   const moveDrag = (clientX, clientY) => {
     if (!isDragging) return;
-    div.style.left = clientX - offsetX + 'px';
-    div.style.top = clientY - offsetY + 'px';
+    const position = clampPosition(
+      startLeft + clientX - startClientX,
+      startTop + clientY - startClientY,
+    );
+
+    div.style.right = 'auto';
+    div.style.left = position.left + 'px';
+    div.style.top = position.top + 'px';
+  };
+
+  const reconcilePosition = () => {
+    if (window.innerWidth <= 950) {
+      isDragging = false;
+      div.style.left = '';
+      div.style.top = '';
+      div.style.right = '';
+      return;
+    }
+
+    const position = clampPosition(div.offsetLeft, div.offsetTop);
+
+    div.style.right = 'auto';
+    div.style.left = position.left + 'px';
+    div.style.top = position.top + 'px';
   };
 
   const stopDrag = () => {
@@ -43,6 +87,8 @@ function makeDraggable(div) {
   // window/tab loses focus (e.g. alt-tabbing) while the button is held.
   window.addEventListener('blur', onMouseUp);
   document.addEventListener('mouseleave', onMouseUp);
+  window.addEventListener('resize', reconcilePosition);
+  reconcilePosition();
 
   // --- Touch ---
   div.addEventListener('touchstart', (e) => {
