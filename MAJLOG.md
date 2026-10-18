@@ -2,7 +2,7 @@
 
 > see dates on github
 
-## 1.19
+## 1.18.5
 - dev-tooling upgrade => package.json, pre-commit git hook that recompiles SCSS to CSS automatically before every commit for convenience, code linter for js and scss
 - some code cleanup (horrible commit diff lol)
 - refactoring some stuff
