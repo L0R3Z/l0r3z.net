@@ -70,7 +70,8 @@ main {
     position: fixed;
     background-image: url("/_src/img/deco/chains.png");
     height: 100%;
-    width: 100%;
+    width: 110%;
+    transform: translateX(-4%);
     background-size: cover;
     background-position: center;
     pointer-events: none;
@@ -87,6 +88,20 @@ main {
     display: grid;
     grid-template-columns: 0.8fr 2.9fr 1.2fr;
     gap: 0.4em 0.4em;
+
+    &--right_block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4em;
+        min-height: 0;
+    transform: rotate(2deg);
+
+
+        .placeholder {
+            flex: 1;
+            min-height: 0;
+        }
+    }
 
     &--left_block {
         display: flex;
@@ -213,77 +228,124 @@ main {
     }
 }
 
-/* HEADER */
-.header {
-    display: flex;
-    max-width: 684px;
-    position: relative;
-    z-index: 10;
-
-    &--container {
-        width: 90%;
-        display: flex;
-        // margin-top: -4em;
-        padding: 0.2em;
-        // top: 15em;
-        justify-content: space-between;
-        align-items: end;
-        background-color: $color-scrollbar;
-        transform: rotate(-3deg);
-        animation: spin_headercontainer 3s ease-in-out infinite;
-
-        &--title {
-            font-family: daydream, sans-serif;
-            font-size: 0.4em;
-            color: white;
-            font-weight: normal;
-        }
-
-        &--subtext {
-            font-family: kiwisoda, sans-serif;
-            font-size: 0.625em;
-            color: $color-text-light;
-        }
-    }
-
-    &--logo {
-        position: absolute;
-        width: 12em;
-        top: -2.5em;
-        right: -2em;
-        z-index: 9;
-        pointer-events: none;
-    }
+/* LOGO */
+.header--logo {
+    // Out of flow: hangs next to the tabs and overlaps the introduction box
+    // without adding any height to the header.
+    position: absolute;
+    left: 100%;
+    bottom: -2.2em;
+    width: 9.5em;
+    height: auto;
+    margin-left: -0.5em;
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(3deg);
+    animation: logo-float 6s ease-in-out infinite;
 }
 
-@keyframes spin_headercontainer {
-    0% {
-        transform: rotate(-6deg);
+// Same as `float`, but keeps the logo's tilt.
+@keyframes logo-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(3deg);
     }
 
     50% {
-        transform: rotate(-3deg);
-    }
-
-    100% {
-        transform: rotate(-6deg);
+        transform: translateY(-10px) rotate(3deg);
     }
 }
 
 /* INTRODUCTION */
 .introduction {
     display: grid;
+    // Pushes the tabs/logo/box lower than the other columns; their bottoms still line up.
+    box-sizing: border-box;
+    padding-top: 1.25em;
     height: inherit;
     min-height: inherit;
     width: 100%;
+    grid-template-rows: minmax(0, 1fr);
     // overflow: auto;
     // transform: rotate(3deg);
 
+    // Out of flow, anchored at the top-left of .introduction (static position)
+    // and lifted above it: tabs + logo sit on top without taking any height.
+    // .introduction must stay unpositioned so the static position is the
+    // grid area's corner.
+    &--header {
+        // No z-index: the tabs' hidden padding must paint behind --container
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        gap: 0.6em;
+    }
+
     &--container {
-        overflow: auto;
-        // height: inherit;
+        position: relative;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
         margin-top: 0;
     }
+}
+
+/* TABS (where am i? / about me / code of honor) */
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    // gap: 0.4em;
+    // margin-bottom: 0.4em;
+    font-size: 0.35em;
+    transform: translateY(calc(-100%));
+
+    &[hidden] {
+        display: none;
+    }
+
+    &--tab {
+        font-family: daydream, sans-serif;
+        font-size: 1em;
+        padding: 0.5em 0.9em;        
+        background:
+            $color-text-titlegradient-highlighted text,
+            linear-gradient($color-background, $color-background) border-box;
+        -webkit-text-fill-color: transparent;
+        border: ridge 3px $color-border;
+        border-bottom: none;
+        cursor: pointer;
+        transition: opacity 0.5s, transform 0.2s;
+        border-radius: 1em 1em 0 0;
+        opacity: 50%;
+
+        // Hidden bottom padding: tucked behind the section so a lifted tab stays attached
+        padding-bottom: calc(0.5em + 0.3em);
+        margin-bottom: -0.3em;
+
+        &:hover,
+        &:focus-visible {
+            opacity: 80%;
+            transform: translateY(-0.3em);
+        }
+
+        &.is-active {
+            opacity: 100%;
+            transform: translateY(-0.3em);
+        }
+    }
+}
+
+.tabpanels {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 0.75em;
+}
+
+.tabpanel[hidden] {
+    display: none;
 }
 
 .where_am_i {
@@ -322,8 +384,10 @@ main {
 }
 
 .currently {
-    margin-top: 1.75em;
-    transform: rotate(2deg);
+    align-self: start;
+    flex: 0 0 58%; // leaves room below for a square-ish section
+    margin-top: 0;
+    font-size: 1em;
     overflow: auto;
 
     h2 {
@@ -381,6 +445,31 @@ main {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.8fr;
     gap: 0.4em 0.4em;
+}
+
+/* PLACEHOLDERS (future Updates / chatbox) */
+.placeholder {
+    position: relative;
+    overflow: auto;
+    min-width: 0;
+
+    // "under construction" chains drawn over the box
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/_src/img/deco/under_construction_chains.png") center / 100% 100% no-repeat;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    h2 {
+        font-size: 0.4em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
 }
 
 /* COMMUNITY */
@@ -467,11 +556,11 @@ main {
 
 /* ABOUT ME */
 .about_me {
-    overflow: auto;
-    margin-top: 0;
+    margin: 0 0.3em;
+    font-size: 0.9em;
 
+    
     h2 {
-        font-size: 0.4em;
         position: relative;
 
         img {
@@ -483,7 +572,6 @@ main {
     }
 
     p {
-        font-size: 0.8em;
         margin-bottom: 0.2em;
     }
 
@@ -527,22 +615,9 @@ main {
 // }
 
 /* CODE OF HONOR */
-.codeofhonor--container {
-    height: inherit;
-    position: relative;
-    display: flex;
-    min-height: inherit;
-}
-
 #codeofhonor {
-    overflow: auto;
-    margin-top: 0;
-    margin-left: 0;
-    position: relative;
-
-    h2 {
-        font-size: 0.4em;
-    }
+    margin: 0 0.4em;
+    font-size: 0.9em;
 
     &--description {
         /* margin-bottom: .5em; */
@@ -552,16 +627,13 @@ main {
         margin-top: 0.4em;
     }
 
-    p {
-        font-size: 0.8em;
-    }
-
     &--gif {
         position: absolute;
         bottom: -0.3em;
         right: -1.25em;
         transform: rotateZ(-10deg);
         pointer-events: none;
+        z-index: 1;
     }
 }
 

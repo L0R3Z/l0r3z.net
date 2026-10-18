@@ -3,7 +3,7 @@
   "private": true,
   "description": "Local dev tooling only (SCSS compilation + linting). This is a static site with no bundler/build step — nothing here ships to the browser.",
   "scripts": {
-    "build:css": "sass \\_src/style/scss/reset.scss:\\_src/style/css/reset.css \\_src/style/scss/base.scss:\\_src/style/css/base.css \\_src/style/scss/home/home.scss:\\_src/style/css/home.css \\_src/style/scss/journal/journal.scss:\\_src/style/css/journal.css \\_src/style/scss/journal/journal_entry.scss:\\_src/style/css/journal_entry.css \\_src/style/scss/splash/splash.scss:\\_src/style/css/splash.css --source-map",
+    "build:css": "sass _src/style/scss/reset.scss:_src/style/css/reset.css _src/style/scss/base.scss:_src/style/css/base.css _src/style/scss/home/home.scss:_src/style/css/home.css _src/style/scss/journal/journal.scss:_src/style/css/journal.css _src/style/scss/journal/journal_entry.scss:_src/style/css/journal_entry.css _src/style/scss/splash/splash.scss:_src/style/css/splash.css --source-map",
     "build:css:watch": "npm run build:css -- --watch",
     "lint:js": "eslint _src/script",
     "lint:css": "stylelint \"_src/style/scss/**/*.scss\"",

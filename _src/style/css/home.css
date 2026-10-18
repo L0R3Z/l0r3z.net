@@ -61,7 +61,8 @@ main .third_block {
   position: fixed;
   background-image: url("/_src/img/deco/chains.png");
   height: 100%;
-  width: 100%;
+  width: 110%;
+  transform: translateX(-4%);
   background-size: cover;
   background-position: center;
   pointer-events: none;
@@ -77,6 +78,17 @@ main .third_block {
   display: grid;
   grid-template-columns: 0.8fr 2.9fr 1.2fr;
   gap: 0.4em 0.4em;
+}
+.first_block--right_block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  min-height: 0;
+  transform: rotate(2deg);
+}
+.first_block--right_block .placeholder {
+  flex: 1;
+  min-height: 0;
 }
 .first_block--left_block {
   display: flex;
@@ -185,65 +197,97 @@ main .third_block {
   opacity: 50%;
 }
 
-/* HEADER */
-.header {
-  display: flex;
-  max-width: 684px;
-  position: relative;
-  z-index: 10;
-}
-.header--container {
-  width: 90%;
-  display: flex;
-  padding: 0.2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  background-color: rgba(71, 138, 184, 0.5);
-  transform: rotate(-3deg);
-  animation: spin_headercontainer 3s ease-in-out infinite;
-}
-.header--container--title {
-  font-family: daydream, sans-serif;
-  font-size: 0.4em;
-  color: white;
-  font-weight: normal;
-}
-.header--container--subtext {
-  font-family: kiwisoda, sans-serif;
-  font-size: 0.625em;
-  color: #ebefff;
-}
+/* LOGO */
 .header--logo {
   position: absolute;
-  width: 12em;
-  top: -2.5em;
-  right: -2em;
-  z-index: 9;
+  left: 100%;
+  bottom: -2.2em;
+  width: 9.5em;
+  height: auto;
+  margin-left: -0.5em;
+  z-index: 1;
   pointer-events: none;
+  transform: rotate(3deg);
+  animation: logo-float 6s ease-in-out infinite;
 }
 
-@keyframes spin_headercontainer {
-  0% {
-    transform: rotate(-6deg);
+@keyframes logo-float {
+  0%, 100% {
+    transform: translateY(0) rotate(3deg);
   }
   50% {
-    transform: rotate(-3deg);
-  }
-  100% {
-    transform: rotate(-6deg);
+    transform: translateY(-10px) rotate(3deg);
   }
 }
 /* INTRODUCTION */
 .introduction {
   display: grid;
+  box-sizing: border-box;
+  padding-top: 1.25em;
   height: inherit;
   min-height: inherit;
   width: 100%;
+  grid-template-rows: minmax(0, 1fr);
+}
+.introduction--header {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6em;
 }
 .introduction--container {
-  overflow: auto;
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   margin-top: 0;
+}
+
+/* TABS (where am i? / about me / code of honor) */
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 0.35em;
+  transform: translateY(-100%);
+}
+.tabs[hidden] {
+  display: none;
+}
+.tabs--tab {
+  font-family: daydream, sans-serif;
+  font-size: 1em;
+  padding: 0.5em 0.9em;
+  background: linear-gradient(to bottom, #d1dbff, #ff5cb8) text, linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)) border-box;
+  -webkit-text-fill-color: transparent;
+  border: ridge 3px rgba(209, 219, 255, 0.7);
+  border-bottom: none;
+  cursor: pointer;
+  transition: opacity 0.5s, transform 0.2s;
+  border-radius: 1em 1em 0 0;
+  opacity: 50%;
+  padding-bottom: 0.8em;
+  margin-bottom: -0.3em;
+}
+.tabs--tab:hover, .tabs--tab:focus-visible {
+  opacity: 80%;
+  transform: translateY(-0.3em);
+}
+.tabs--tab.is-active {
+  opacity: 100%;
+  transform: translateY(-0.3em);
+}
+
+.tabpanels {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 0.75em;
+}
+
+.tabpanel[hidden] {
+  display: none;
 }
 
 .where_am_i {
@@ -274,8 +318,10 @@ main .third_block {
 }
 
 .currently {
-  margin-top: 1.75em;
-  transform: rotate(2deg);
+  align-self: start;
+  flex: 0 0 58%;
+  margin-top: 0;
+  font-size: 1em;
   overflow: auto;
 }
 .currently h2 {
@@ -288,7 +334,6 @@ main .third_block {
   margin-bottom: 0.75em;
 }
 .currently--list--item {
-  margin-bottom: 0em;
   width: 90%;
   margin-bottom: 0.5em;
 }
@@ -322,6 +367,27 @@ main .third_block {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.8fr;
   gap: 0.4em 0.4em;
+}
+
+/* PLACEHOLDERS (future Updates / chatbox) */
+.placeholder {
+  position: relative;
+  overflow: auto;
+  min-width: 0;
+}
+.placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/_src/img/deco/under_construction_chains.png") center/100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+.placeholder h2 {
+  font-size: 0.4em;
+}
+.placeholder p {
+  font-size: 0.8em;
 }
 
 /* COMMUNITY */
@@ -376,11 +442,10 @@ main .third_block {
 
 /* ABOUT ME */
 .about_me {
-  overflow: auto;
-  margin-top: 0;
+  margin: 0 0.3em;
+  font-size: 0.9em;
 }
 .about_me h2 {
-  font-size: 0.4em;
   position: relative;
 }
 .about_me h2 img {
@@ -390,7 +455,6 @@ main .third_block {
   bottom: 0.05em;
 }
 .about_me p {
-  font-size: 0.8em;
   margin-bottom: 0.2em;
 }
 .about_me--intro {
@@ -417,21 +481,9 @@ main .third_block {
 }
 
 /* CODE OF HONOR */
-.codeofhonor--container {
-  height: inherit;
-  position: relative;
-  display: flex;
-  min-height: inherit;
-}
-
 #codeofhonor {
-  overflow: auto;
-  margin-top: 0;
-  margin-left: 0;
-  position: relative;
-}
-#codeofhonor h2 {
-  font-size: 0.4em;
+  margin: 0 0.4em;
+  font-size: 0.9em;
 }
 #codeofhonor--description {
   /* margin-bottom: .5em; */
@@ -439,15 +491,13 @@ main .third_block {
 #codeofhonor li {
   margin-top: 0.4em;
 }
-#codeofhonor p {
-  font-size: 0.8em;
-}
 #codeofhonor--gif {
   position: absolute;
   bottom: -0.3em;
   right: -1.25em;
   transform: rotateZ(-10deg);
   pointer-events: none;
+  z-index: 1;
 }
 
 /* LISTENING TO */

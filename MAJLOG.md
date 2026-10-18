@@ -7,6 +7,8 @@
 - some code cleanup (horrible commit diff lol)
 - refactoring some stuff
 - new status update 1 year later lol
+- fixing weird behavior with Listening To moveable window
+- homepage layout maj: "where am i?", "about me" and "code of honor" now share one tabbed panel + some content and visual tweaks + some homepage content changes and updates
 
 ## 1.18
 - new! guestbook available in the homepage menu
