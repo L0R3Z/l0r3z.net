@@ -736,6 +736,41 @@ footer {
         height: 1em;
     }
 
+    .theme_picker {
+        margin-top: 0.4em;
+        padding: 0.3em 0.6em;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 0.6em;
+
+        &--label {
+            color: var(--theme--color--text--basic);
+        }
+
+        &--option {
+            font: inherit;
+            color: var(--theme--color--text--basic);
+            background: none;
+            border: 1px solid var(--theme--color--box--border);
+            padding: 0.1em 0.5em;
+            cursor: pointer;
+            opacity: 60%;
+            transition: opacity 0.3s;
+
+            &:hover,
+            &:focus-visible {
+                opacity: 90%;
+            }
+
+            &--active {
+                opacity: 100%;
+                color: var(--theme--color--text--highlighted);
+                border-color: var(--theme--color--text--highlighted);
+            }
+        }
+    }
+
     #legal {
         color: var(--theme--home--legal--text);
         text-shadow: var(--theme--home--legal--shadow);
