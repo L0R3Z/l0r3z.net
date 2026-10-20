@@ -2,11 +2,25 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Check internal links and images
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --root-dir ${{ github.workspace }} --config lychee.toml './**/*.html'
+          fail: true
+          jobSummary: true
+
   build:
+    needs: link-check
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
