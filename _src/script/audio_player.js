@@ -1,4 +1,4 @@
-Model = (() => {
+const Model = (() => {
     let tracks = [];
     let currentIndex = 0;
 
@@ -23,7 +23,7 @@ Model = (() => {
     };
 })();
 
-View = (() => {
+const View = (() => {
     const audio = document.getElementById('audio');
     const trackName = document.getElementById('track_name');
     const playPauseBtn = document.getElementById('play_pause');
@@ -122,7 +122,7 @@ View = (() => {
     };
 })();
 
-Controller = (() => {
+const Controller = (() => {
     const loadTrack = () => {
         const track = Model.getCurrentTrack();
         View.updateTrackInfo(track);
