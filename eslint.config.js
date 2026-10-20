@@ -15,7 +15,7 @@ module.exports = [
             },
         },
         rules: {
-            "no-unused-vars": ["warn", { "vars": "local" }],
+            "no-unused-vars": "warn",
         },
     },
     {

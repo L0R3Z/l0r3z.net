@@ -87,15 +87,13 @@ const View = (() => {
         drawVisualizer();
     });
 
-    audio.addEventListener('pause', () => {
+    const stopVisualizer = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         cancelAnimationFrame(animationId);
-    });
+    };
 
-    audio.addEventListener('ended', () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        cancelAnimationFrame(animationId);
-    });
+    audio.addEventListener('pause', stopVisualizer);
+    audio.addEventListener('ended', stopVisualizer);
     // === AUDIO VISUALIZER ===
 
     const playAudio = () => audio.play();

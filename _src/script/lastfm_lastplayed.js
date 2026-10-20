@@ -16,7 +16,9 @@ const Model = (() => {
         if (!res.ok) throw new Error("Last.fm HTTP " + res.status);
         const data = await res.json();
         if (data.error) throw new Error("Last.fm error " + data.error);
-        const track = data.recenttracks && data.recenttracks.track && data.recenttracks.track[0];
+        // last.fm sometimes sends a single object instead of an array
+        const tracks = data.recenttracks?.track;
+        const track = Array.isArray(tracks) ? tracks[0] : tracks;
         if (!track) throw new Error("Last.fm returned no track");
         return track;
     };
@@ -36,7 +38,9 @@ const View = (() => {
         title.href = track.url;
         title.target = "_blank";
         artist.textContent = stripAccents(track.artist["#text"]);
-        art.src = track.image[2]["#text"];
+        const cover = track.image?.[2]?.["#text"];
+        if (cover) art.src = cover;
+        else art.removeAttribute("src");
     };
 
     const renderError = () => {
@@ -53,11 +57,17 @@ const View = (() => {
 const Controller = (() => {
     const POLL_MS = 30 * 1000;
     let pollInterval = null;
+    let latestRequest = 0;
 
+    // only the newest request gets to touch the widget, so a slow old
+    // response can't overwrite a fresher one
     const refresh = async () => {
+        const requestId = ++latestRequest;
         try {
-            View.render(await Model.fetchLastTrack());
+            const track = await Model.fetchLastTrack();
+            if (requestId === latestRequest) View.render(track);
         } catch (error) {
+            if (requestId !== latestRequest) return;
             console.error("Last.fm widget:", error);
             View.renderError();
         }

@@ -21,7 +21,8 @@ const View = (() => {
     audio.playbackRate = .08;
     audio.volume = 0;
 
-    const play = () => audio.play();
+    // hover isn't a user gesture, so autoplay policy can reject this - that's fine
+    const play = () => audio.play().catch(() => {});
 
     const stop = () => {
         audio.pause();
@@ -80,6 +81,8 @@ const Controller = (() => {
 
     const handleMouseLeave = () => {
         isMecatHovered = false;
+        clearInterval(volumeInterval);
+        volumeInterval = null;
         View.stop();
     };
 
