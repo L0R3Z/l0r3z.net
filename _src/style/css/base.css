@@ -34,7 +34,7 @@
 }
 
 html {
-  scrollbar-color: rgba(71, 138, 184, 0.5) rgba(255, 255, 255, 0.7);
+  scrollbar-color: var(--theme--color--scrollbar, rgba(71, 138, 184, 0.5)) var(--theme--color--box--background, rgba(255, 255, 255, 0.7));
 }
 
 body {
@@ -42,7 +42,7 @@ body {
   background-repeat: no-repeat, repeat;
   background-position: center;
   background-attachment: fixed;
-  color: #478ab8;
+  color: var(--theme--color--text--basic, #478ab8);
 }
 
 p {
@@ -51,13 +51,13 @@ p {
 }
 
 a {
-  color: #ff5cb8;
+  color: var(--theme--color--text--highlighted, #ff5cb8);
   cursor: pointer;
   transition: text-shadow 0.5s;
   z-index: 15;
 }
 a:hover {
-  text-shadow: 0px 0px 1px #ff5cb8, 0px 0px 4px #ff5cb8;
+  text-shadow: 0px 0px 1px var(--theme--color--text--highlighted, #ff5cb8), 0px 0px 4px var(--theme--color--text--highlighted, #ff5cb8);
 }
 
 img {
@@ -83,8 +83,8 @@ small {
 }
 
 .box {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: ridge 3px rgba(209, 219, 255, 0.7);
+  background-color: var(--theme--color--box--background, rgba(255, 255, 255, 0.7));
+  border: ridge 3px var(--theme--color--box--border, rgba(209, 219, 255, 0.7));
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 

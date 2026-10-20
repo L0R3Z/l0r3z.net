@@ -42,7 +42,7 @@
 // }
 
 html {
-    scrollbar-color: $color-scrollbar $color-background;
+    scrollbar-color: var(--theme--color--scrollbar, #{$color-scrollbar}) var(--theme--color--box--background, #{$color-background});
 }
 
 body {
@@ -50,7 +50,7 @@ body {
     background-repeat: no-repeat, repeat;
     background-position: center;
     background-attachment: fixed;
-    color: $color-text-basic;
+    color: var(--theme--color--text--basic, #{$color-text-basic});
 }
 
 p {
@@ -59,15 +59,15 @@ p {
 }
 
 a {
-    color: $color-text-highlighted;
+    color: var(--theme--color--text--highlighted, #{$color-text-highlighted});
     cursor: pointer;
     transition: text-shadow 0.5s;
     z-index: 15;
 
     &:hover {
         text-shadow:
-            0px 0px 1px $color-text-highlighted,
-            0px 0px 4px $color-text-highlighted;
+            0px 0px 1px var(--theme--color--text--highlighted, #{$color-text-highlighted}),
+            0px 0px 4px var(--theme--color--text--highlighted, #{$color-text-highlighted});
     }
 }
 
@@ -97,8 +97,8 @@ small {
 }
 
 .box {
-    background-color: $color-background;
-    border: ridge 3px $color-border;
+    background-color: var(--theme--color--box--background, #{$color-background});
+    border: ridge 3px var(--theme--color--box--border, #{$color-border});
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
