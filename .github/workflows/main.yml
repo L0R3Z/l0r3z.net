@@ -14,6 +14,8 @@ jobs:
       - name: Check internal links and images
         uses: lycheeverse/lychee-action@v2
         with:
+          # pinned so lychee.toml options don't break when the action bumps lychee
+          lycheeVersion: v0.24.2
           args: --root-dir ${{ github.workspace }} --config lychee.toml './**/*.html'
           fail: true
           jobSummary: true

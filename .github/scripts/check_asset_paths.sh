@@ -23,9 +23,15 @@ for css in _src/style/css/*.css; do
 done
 
 # music player tracks
+# jq runs first on its own: a broken tracks.json has to fail the check,
+# a process substitution would just swallow the error
+if ! tracks=$(jq -r '.[] | .src, .img' _src/audio/tracks.json); then
+  echo "_src/audio/tracks.json can't be read (broken json?)"
+  missing=1
+fi
 while IFS= read -r p; do
-  check "$p" "_src/audio/tracks.json"
-done < <(jq -r '.[] | .src, .img' _src/audio/tracks.json)
+  [ -n "$p" ] && check "$p" "_src/audio/tracks.json"
+done <<< "${tracks:-}"
 
 if [ "$missing" -ne 0 ]; then
   echo "some asset paths point at nothing"
