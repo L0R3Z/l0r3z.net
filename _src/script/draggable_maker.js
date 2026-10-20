@@ -1,4 +1,4 @@
-function makeDraggable(div) {
+export function makeDraggable(div) {
   let isDragging = false;
   let startClientX, startClientY, startLeft, startTop;
 
