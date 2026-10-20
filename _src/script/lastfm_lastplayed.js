@@ -20,24 +20,22 @@ var getSetLastFM = function () {
             var recentTrack = resp.recenttracks.track[0];
             var formatted = recentTrack.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             $("a#tracktitle")
-                .html(formatted)
+                .text(formatted)
                 .attr("href", recentTrack.url)
                 .attr("target", "_blank");
             var artistFormatted = recentTrack.artist["#text"].normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             $("a#trackartist")
-                .html(artistFormatted);
+                .text(artistFormatted);
             $("img#trackart").attr("src", recentTrack.image[2]["#text"]);
         },
         error: function () {
-            $("a#tracktitle").html(
-                "<img src=''>" + "Nothing bro"
-            );
+            $("a#tracktitle")
+                .text("Nothing bro")
+                .removeAttr("href");
             $("img#trackart").attr("src", "");
-            var artistFormatted =
-                "<img src=''>the script didn't work...";
             $("a#trackartist")
-                .html(artistFormatted)
-                .attr("href", "");
+                .text("the script didn't work...")
+                .removeAttr("href");
         }
     });
 };

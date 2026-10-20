@@ -8,7 +8,7 @@ module.exports = [
     {
         files: ["_src/script/**/*.js"],
         languageOptions: {
-            sourceType: "script",
+            sourceType: "module",
             ecmaVersion: 2021,
             globals: {
                 ...globals.browser,
@@ -19,10 +19,6 @@ module.exports = [
             "no-undef": "off",
             "no-unused-vars": ["warn", { "vars": "local" }],
         },
-    },
-    {
-        files: ["_src/script/age.js", "_src/script/home_tabs.js"],
-        languageOptions: { sourceType: "module" },
     },
     {
         ignores: ["old_version/**", "node_modules/**", "_src/style/**"],
