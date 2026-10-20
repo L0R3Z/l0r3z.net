@@ -18,6 +18,9 @@ jobs:
           fail: true
           jobSummary: true
 
+      - name: Check css url() and music player paths
+        run: bash .github/scripts/check_asset_paths.sh
+
   build:
     needs: link-check
     if: github.ref == 'refs/heads/main'
