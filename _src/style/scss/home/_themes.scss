@@ -1,0 +1,42 @@
+@import "../var";
+
+// Homepage theme config. See CLAUDE.md for how a page opts in.
+// :root = default tokens = the `sky` look. One block per other theme below.
+// Theme name = value of <html data-theme="...">, set by /_src/script/theme_boot.js.
+
+:root {
+    // colors
+    --theme--color--text--basic: #{$color-text-basic};
+    --theme--color--text--highlighted: #{$color-text-highlighted};
+    --theme--color--box--background: #{$color-background};
+    --theme--color--box--border: #{$color-border};
+    --theme--color--scrollbar: #{$color-scrollbar};
+    --theme--color--title--gradient: #{$color-text-titlegradient};
+    --theme--color--title--gradient--highlighted: #{$color-text-titlegradient-highlighted};
+
+    // backgrounds / images
+    --theme--bg--image: url("/_src/img/bg/home1.png");
+    --theme--home--chains--image: url("/_src/img/deco/chains.png");
+    --theme--home--bubble--image: url("/_src/img/deco/currently_bubble.png");
+    --theme--home--cdbox--image: url("/_src/img/deco/cdbox.png");
+    --theme--home--construction--image: url("/_src/img/deco/under_construction_chains.png");
+
+    // fonts
+    --theme--font--text: simple, sans-serif;
+    --theme--font--title: daydream, sans-serif;
+    --theme--font--accent: kiwisoda, sans-serif;
+
+    // music player
+    --theme--home--player--border: #759eed;
+    --theme--home--player--title--text: white;
+    --theme--home--player--title--background: radial-gradient(circle, #2971ea 14%, #759eed 100%);
+    --theme--home--player--main--background: white;
+    --theme--home--player--track--text: white;
+    --theme--home--player--track--shadow: 0px 0px 5px rgba(0, 94, 255, 1), -1px -1px 5px rgba(10, 32, 75, 0.684);
+    --theme--home--player--controls--background: linear-gradient(to bottom, rgba(117, 158, 237, 0) 0%, rgba(41, 113, 234, 0.8) 90%);
+
+    // glowing bits
+    --theme--home--glow--shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgba(106, 155, 255, 0.684);
+    --theme--home--legal--text: white;
+    --theme--home--legal--shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(26, 102, 254);
+}

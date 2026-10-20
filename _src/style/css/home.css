@@ -1,3 +1,31 @@
+:root {
+  --theme--color--text--basic: #478ab8;
+  --theme--color--text--highlighted: #ff5cb8;
+  --theme--color--box--background: rgba(255, 255, 255, 0.7);
+  --theme--color--box--border: rgba(209, 219, 255, 0.7);
+  --theme--color--scrollbar: rgba(71, 138, 184, 0.5);
+  --theme--color--title--gradient: linear-gradient(to bottom, #d1dbff, #508fbc);
+  --theme--color--title--gradient--highlighted: linear-gradient(to bottom, #d1dbff, #ff5cb8);
+  --theme--bg--image: url("/_src/img/bg/home1.png");
+  --theme--home--chains--image: url("/_src/img/deco/chains.png");
+  --theme--home--bubble--image: url("/_src/img/deco/currently_bubble.png");
+  --theme--home--cdbox--image: url("/_src/img/deco/cdbox.png");
+  --theme--home--construction--image: url("/_src/img/deco/under_construction_chains.png");
+  --theme--font--text: simple, sans-serif;
+  --theme--font--title: daydream, sans-serif;
+  --theme--font--accent: kiwisoda, sans-serif;
+  --theme--home--player--border: #759eed;
+  --theme--home--player--title--text: white;
+  --theme--home--player--title--background: radial-gradient(circle, #2971ea 14%, #759eed 100%);
+  --theme--home--player--main--background: white;
+  --theme--home--player--track--text: white;
+  --theme--home--player--track--shadow: 0px 0px 5px rgba(0, 94, 255, 1), -1px -1px 5px rgba(10, 32, 75, 0.684);
+  --theme--home--player--controls--background: linear-gradient(to bottom, rgba(117, 158, 237, 0) 0%, rgba(41, 113, 234, 0.8) 90%);
+  --theme--home--glow--shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgba(106, 155, 255, 0.684);
+  --theme--home--legal--text: white;
+  --theme--home--legal--shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(26, 102, 254);
+}
+
 /* ------- */
 /* GENERAL */
 /* ------- */
@@ -6,11 +34,11 @@ html {
 }
 
 body {
-  background-image: url("/_src/img/bg/home1.png");
+  background-image: var(--theme--bg--image);
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: simple, sans-serif;
+  font-family: var(--theme--font--text);
   font-size: clamp(1rem, 3vw, 2.03rem);
   overflow-x: hidden;
 }
@@ -21,9 +49,9 @@ a {
 }
 
 h2 {
-  font-family: daydream, sans-serif;
+  font-family: var(--theme--font--title);
   font-size: 0.5em;
-  background: linear-gradient(to bottom, #d1dbff, #508fbc);
+  background: var(--theme--color--title--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5em;
@@ -59,7 +87,7 @@ main .third_block {
 .chains {
   z-index: 99;
   position: fixed;
-  background-image: url("/_src/img/deco/chains.png");
+  background-image: var(--theme--home--chains--image);
   height: 100%;
   width: 110%;
   transform: translateX(-4%);
@@ -99,21 +127,21 @@ main .third_block {
 /* MUSICPLAYER */
 .music_player {
   padding: 0;
-  border: double 8px #759EED;
+  border: double 8px var(--theme--home--player--border);
 }
 .music_player--title {
-  color: white;
+  color: var(--theme--home--player--title--text);
   display: flex;
   justify-content: center;
   height: 2rem;
-  background: radial-gradient(circle, #2971EA 14%, #759EED 100%);
+  background: var(--theme--home--player--title--background);
   align-items: center;
 }
 .music_player .smilies {
   padding-right: 0.4rem;
 }
 .music_player--main {
-  background-color: white;
+  background-color: var(--theme--home--player--main--background);
   display: flex;
   position: relative;
   overflow: hidden;
@@ -123,9 +151,9 @@ main .third_block {
 }
 .music_player--track_name {
   z-index: 1;
-  color: white;
+  color: var(--theme--home--player--track--text);
   margin: 0.2em;
-  text-shadow: 0px 0px 5px rgb(0, 94, 255), -1px -1px 5px rgba(10, 32, 75, 0.684);
+  text-shadow: var(--theme--home--player--track--shadow);
 }
 .music_player--controls {
   height: 2em;
@@ -135,7 +163,7 @@ main .third_block {
   align-items: end;
   padding-bottom: 0.4em;
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(117, 158, 237, 0) 0%, rgba(41, 113, 234, 0.8) 90%);
+  background: var(--theme--home--player--controls--background);
 }
 .music_player--controls img {
   height: 100%;
@@ -184,7 +212,7 @@ main .third_block {
   flex-direction: column;
 }
 .menu--section--list--item small {
-  font-family: kiwisoda, sans-serif;
+  font-family: var(--theme--font--accent);
   font-size: 0.5em;
 }
 .menu--subtext {
@@ -256,12 +284,12 @@ main .third_block {
   display: none;
 }
 .tabs--tab {
-  font-family: daydream, sans-serif;
+  font-family: var(--theme--font--title);
   font-size: 1em;
   padding: 0.5em 0.9em;
-  background: linear-gradient(to bottom, #d1dbff, #ff5cb8) text, linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)) border-box;
+  background: var(--theme--color--title--gradient--highlighted) text, linear-gradient(var(--theme--color--box--background), var(--theme--color--box--background)) border-box;
   -webkit-text-fill-color: transparent;
-  border: ridge 3px rgba(209, 219, 255, 0.7);
+  border: ridge 3px var(--theme--color--box--border);
   border-bottom: none;
   cursor: pointer;
   transition: opacity 0.5s, transform 0.2s;
@@ -303,7 +331,7 @@ main .third_block {
 }
 .where_am_i--text .slightly_larger {
   font-size: 1.4em;
-  text-shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgba(106, 155, 255, 0.684);
+  text-shadow: var(--theme--home--glow--shadow);
 }
 
 .about_website {
@@ -338,16 +366,16 @@ main .third_block {
   margin-bottom: 0.5em;
 }
 .currently--list--item h3 {
-  font-family: kiwisoda, sans-serif;
+  font-family: var(--theme--font--accent);
   font-size: 0.7em;
 }
 .currently--list--item--bubble {
-  background-image: url("/_src/img/deco/currently_bubble.png");
+  background-image: var(--theme--home--bubble--image);
   background-size: cover;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   padding: 0.3em;
   font-size: 0.75em;
-  border: 1px solid rgba(71, 138, 184, 0.5);
+  border: 1px solid var(--theme--color--scrollbar);
 }
 .currently--list--item:nth-child(odd) {
   justify-self: left;
@@ -379,7 +407,7 @@ main .third_block {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/_src/img/deco/under_construction_chains.png") center/100% 100% no-repeat;
+  background: var(--theme--home--construction--image) center/100% 100% no-repeat;
   pointer-events: none;
   z-index: 1;
 }
@@ -524,7 +552,7 @@ main .third_block {
   align-items: start;
   max-height: 4.4em;
   padding-left: 0.45em;
-  background-image: url("/_src/img/deco/cdbox.png");
+  background-image: var(--theme--home--cdbox--image);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -588,8 +616,8 @@ footer .badge8831 {
   height: 1em;
 }
 footer #legal {
-  color: white;
-  text-shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(26, 102, 254);
+  color: var(--theme--home--legal--text);
+  text-shadow: var(--theme--home--legal--shadow);
 }
 
 @media (max-width: 950px) {
