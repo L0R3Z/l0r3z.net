@@ -12,11 +12,9 @@ module.exports = [
             ecmaVersion: 2021,
             globals: {
                 ...globals.browser,
-                ...globals.jquery,
             },
         },
         rules: {
-            "no-undef": "off",
             "no-unused-vars": ["warn", { "vars": "local" }],
         },
     },
