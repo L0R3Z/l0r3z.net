@@ -39,6 +39,10 @@
     --theme--home--glow--shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgba(106, 155, 255, 0.684);
     --theme--home--legal--text: white;
     --theme--home--legal--shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(26, 102, 254);
+
+    // goofy ah webring badge
+    --theme--home--webring--text: black;
+    --theme--home--webring--border: black;
 }
 
 // night: dark navy boxes, light text, same pink highlight, home1.png under a dark overlay.
@@ -52,6 +56,7 @@
     --theme--color--title--gradient--highlighted: linear-gradient(to bottom, #ebefff, #ff5cb8);
 
     --theme--bg--image: linear-gradient(rgba(8, 12, 32, 0.75), rgba(8, 12, 32, 0.75)), url("/_src/img/bg/home1.png");
+    --theme--home--bubble--image: linear-gradient(rgba(14, 22, 48, 0.8), rgba(14, 22, 48, 0.8)), url("/_src/img/deco/currently_bubble.png");
 
     --theme--home--player--border: #2a3f7a;
     --theme--home--player--title--text: #ebefff;
@@ -63,4 +68,7 @@
     --theme--home--glow--shadow: 1px 1px 5px rgba(255, 92, 184, 0.6), -1px -1px 5px rgba(80, 110, 190, 0.7);
     --theme--home--legal--text: #d1dbff;
     --theme--home--legal--shadow: 1px 1px 5px rgba(255, 92, 184, 0.6), -1px -1px 5px rgb(26, 40, 110);
+
+    --theme--home--webring--text: #d1dbff;
+    --theme--home--webring--border: rgba(80, 110, 190, 0.7);
 }

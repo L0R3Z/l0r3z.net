@@ -495,7 +495,7 @@ main {
 
     .goofy_ah_webring {
         text-align: center;
-        border: 1px solid black;
+        border: 1px solid var(--theme--home--webring--border);
         font-family: "Comic Sans MS";
         // background-color: white;
         padding: 0.5em;
@@ -503,7 +503,7 @@ main {
 
         p {
             line-height: normal;
-            color: black;
+            color: var(--theme--home--webring--text);
         }
 
         .smilies {
