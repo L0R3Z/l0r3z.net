@@ -26,6 +26,26 @@
   --theme--home--legal--shadow: 1px 1px 5px rgb(255, 255, 255), -1px -1px 5px rgb(26, 102, 254);
 }
 
+:root[data-theme=night] {
+  --theme--color--text--basic: #d1dbff;
+  --theme--color--text--highlighted: #ff5cb8;
+  --theme--color--box--background: rgba(14, 22, 48, 0.8);
+  --theme--color--box--border: rgba(80, 110, 190, 0.7);
+  --theme--color--scrollbar: rgba(80, 110, 190, 0.7);
+  --theme--color--title--gradient: linear-gradient(to bottom, #ebefff, #ff5cb8);
+  --theme--color--title--gradient--highlighted: linear-gradient(to bottom, #ebefff, #ff5cb8);
+  --theme--bg--image: linear-gradient(rgba(8, 12, 32, 0.75), rgba(8, 12, 32, 0.75)), url("/_src/img/bg/home1.png");
+  --theme--home--player--border: #2a3f7a;
+  --theme--home--player--title--text: #ebefff;
+  --theme--home--player--title--background: radial-gradient(circle, #1b2a5c 14%, #2a3f7a 100%);
+  --theme--home--player--main--background: #0e1630;
+  --theme--home--player--track--shadow: 0px 0px 5px rgba(255, 92, 184, 0.9), -1px -1px 5px rgba(8, 12, 32, 0.9);
+  --theme--home--player--controls--background: linear-gradient(to bottom, rgba(42, 63, 122, 0) 0%, rgba(14, 22, 48, 0.85) 90%);
+  --theme--home--glow--shadow: 1px 1px 5px rgba(255, 92, 184, 0.6), -1px -1px 5px rgba(80, 110, 190, 0.7);
+  --theme--home--legal--text: #d1dbff;
+  --theme--home--legal--shadow: 1px 1px 5px rgba(255, 92, 184, 0.6), -1px -1px 5px rgb(26, 40, 110);
+}
+
 /* ------- */
 /* GENERAL */
 /* ------- */
