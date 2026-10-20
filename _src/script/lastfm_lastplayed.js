@@ -1,5 +1,3 @@
-import { makeDraggable } from '/_src/script/draggable_maker.js';
-
 const Model = (() => {
     const config = {
         baseURL: "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=",
@@ -106,4 +104,3 @@ const Controller = (() => {
 })();
 
 Controller.init();
-makeDraggable(document.querySelector('.listening_to'));
