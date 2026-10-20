@@ -1,0 +1,13 @@
+# Internal link checker config (CI + local).
+# Local run: brew install lychee, then
+#   lychee --root-dir "$PWD" --config lychee.toml './**/*.html'
+# --root-dir is passed on the CLI because it differs per machine.
+
+# internal only: skip http(s) URLs
+offline = true
+# journal anchors (/journal/2025/03.html#2) must match an existing id
+include_fragments = "anchor-only"
+# a folder link only counts if it really has an index.html
+index_files = ["index.html"]
+# archive is read-only, node_modules is local only
+exclude_path = ["old_version", "node_modules"]
