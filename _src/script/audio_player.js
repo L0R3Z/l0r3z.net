@@ -34,7 +34,7 @@ View = (() => {
     const updateTrackInfo = (track) => {
         audio.src = track.src;
         trackName.href = track.url;
-        trackName.innerHTML = "" + track.name;
+        trackName.textContent = track.name;
         thumbnail.src = track.img;
     };
 
@@ -88,12 +88,12 @@ View = (() => {
     });
 
     audio.addEventListener('pause', () => {
-        ctx.clearRect();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         cancelAnimationFrame(animationId);
     });
 
     audio.addEventListener('ended', () => {
-        ctx.clearRect();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         cancelAnimationFrame(animationId);
     });
     // === AUDIO VISUALIZER ===
@@ -133,7 +133,7 @@ Controller = (() => {
             } else {
                 console.error("Audio playback error:", error);
             }
-        });;;
+        });
         View.setPlayButtonText("pause");
     };
 
