@@ -25,29 +25,35 @@ const Model = (() => {
 })();
 
 const View = (() => {
+    const widget = document.querySelector(".listening_to");
     const title = document.getElementById("tracktitle");
     const artist = document.getElementById("trackartist");
     const art = document.getElementById("trackart");
 
+    const PLACEHOLDER_COVER = "https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png";
+
+    // visibility, not display: the draggable code needs the widget's layout
+    const setVisible = (visible) => {
+        widget.style.visibility = visible ? "visible" : "hidden";
+    };
+
     const stripAccents = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    art.addEventListener("error", () => {
+        if (art.src !== PLACEHOLDER_COVER) art.src = PLACEHOLDER_COVER;
+    });
 
     const render = (track) => {
         title.textContent = stripAccents(track.name);
         title.href = track.url;
         title.target = "_blank";
         artist.textContent = stripAccents(track.artist["#text"]);
-        const cover = track.image?.[2]?.["#text"];
-        if (cover) art.src = cover;
-        else art.removeAttribute("src");
+        art.src = track.image?.[2]?.["#text"] || PLACEHOLDER_COVER;
+        setVisible(true);
     };
 
-    const renderError = () => {
-        title.textContent = "Nothing bro";
-        title.removeAttribute("href");
-        artist.textContent = "the script didn't work...";
-        artist.removeAttribute("href");
-        art.removeAttribute("src");
-    };
+    // nothing worth showing, so the widget just stays out of the way
+    const renderError = () => setVisible(false);
 
     return { render, renderError };
 })();

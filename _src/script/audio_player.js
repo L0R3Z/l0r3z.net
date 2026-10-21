@@ -63,11 +63,17 @@ const View = (() => {
     resizeCanvas();
 
     let animationId;
+    let fadingOut = false;
 
     const drawVisualizer = () => {
         animationId = requestAnimationFrame(drawVisualizer);
         analyser.getByteFrequencyData(dataArray);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (fadingOut && dataArray.every((value) => value === 0)) {
+            cancelAnimationFrame(animationId);
+            return;
+        }
 
         const barWidth = (canvas.width / bufferLength) * 2.5;
         let x = 0;
@@ -84,12 +90,13 @@ const View = (() => {
         if (audioContext.state === 'suspended') {
             audioContext.resume();
         }
+        cancelAnimationFrame(animationId);
+        fadingOut = false;
         drawVisualizer();
     });
 
     const stopVisualizer = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        cancelAnimationFrame(animationId);
+        fadingOut = true;
     };
 
     audio.addEventListener('pause', stopVisualizer);
@@ -105,6 +112,11 @@ const View = (() => {
     const onNextClick = (handler) => nextBtn.addEventListener('click', handler);
     const onAudioEnd = (handler) => audio.addEventListener('ended', handler);
     const onWindowLoad = (handler) => window.addEventListener('load', handler);
+    const onPlayStateChange = (handler) => {
+        audio.addEventListener('play', handler);
+        audio.addEventListener('pause', handler);
+        window.addEventListener('pageshow', handler);
+    };
 
     return {
         updateTrackInfo,
@@ -116,7 +128,8 @@ const View = (() => {
         onPrevClick,
         onNextClick,
         onAudioEnd,
-        onWindowLoad
+        onWindowLoad,
+        onPlayStateChange
     };
 })();
 
@@ -128,7 +141,8 @@ const Controller = (() => {
             if (error.name === "NotAllowedError") {
                 View.pauseAudio();
                 View.setPlayButtonText("play");
-            } else {
+            } else if (error.name !== "AbortError") {
+                // AbortError = track got switched before it started, not a real problem
                 console.error("Audio playback error:", error);
             }
         });
@@ -137,7 +151,11 @@ const Controller = (() => {
 
     const togglePlayPause = () => {
         if (View.isPaused()) {
-            View.playAudio();
+            View.playAudio().catch((error) => {
+                if (error.name === "AbortError") return;
+                console.error("Audio playback error:", error);
+                View.setPlayButtonText("play");
+            });
             View.setPlayButtonText("pause");
         } else {
             View.pauseAudio();
@@ -160,6 +178,10 @@ const Controller = (() => {
         View.onPrevClick(playPrevious);
         View.onNextClick(playNext);
         View.onAudioEnd(playNext);
+        // the button always mirrors the real audio state, so it can't get stuck
+        View.onPlayStateChange(() => {
+            View.setPlayButtonText(View.isPaused() ? "play" : "pause");
+        });
         View.onWindowLoad(() => {
             Model.load()
                 .then(() => loadTrack())
