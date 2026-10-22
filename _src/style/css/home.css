@@ -640,35 +640,6 @@ footer #list8831 {
 footer .badge8831 {
   height: 1em;
 }
-footer .theme_picker {
-  margin-top: 0.4em;
-  padding: 0.3em 0.6em;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  font-size: 0.6em;
-}
-footer .theme_picker--label {
-  color: var(--theme--color--text--basic);
-}
-footer .theme_picker--option {
-  font: inherit;
-  color: var(--theme--color--text--basic);
-  background: none;
-  border: 1px solid var(--theme--color--box--border);
-  padding: 0.1em 0.5em;
-  cursor: pointer;
-  opacity: 60%;
-  transition: opacity 0.3s;
-}
-footer .theme_picker--option:hover, footer .theme_picker--option:focus-visible {
-  opacity: 90%;
-}
-footer .theme_picker--option--active {
-  opacity: 100%;
-  color: var(--theme--color--text--highlighted);
-  border-color: var(--theme--color--text--highlighted);
-}
 footer #legal {
   color: var(--theme--home--legal--text);
   text-shadow: var(--theme--home--legal--shadow);
@@ -678,6 +649,68 @@ footer #legal {
   .listening_to {
     display: none;
   }
+}
+/* THEME CLOCK */
+.theme_clock {
+  --clock-size: 48px;
+  --clock-from: 0;
+  --clock-to: 0;
+  position: fixed;
+  top: 0.8em;
+  right: 0.8em;
+  z-index: 100;
+  width: var(--clock-size);
+  height: var(--clock-size);
+  padding: 0;
+  border: 0;
+  background: url("/_src/img/deco/theme_clock.png") 0 0/calc(var(--clock-size) * 64) var(--clock-size) no-repeat;
+  image-rendering: pixelated;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s;
+}
+.theme_clock:hover, .theme_clock:focus-visible {
+  transform: scale(1.12) rotate(-6deg);
+}
+.theme_clock--spin {
+  animation: clock-spin 0.8s steps(32);
+}
+
+:root[data-theme=night] .theme_clock {
+  background-position: calc(var(--clock-size) * -32) 0;
+}
+:root[data-theme=night] .theme_clock.theme_clock--spin {
+  --clock-from: 0;
+  --clock-to: 32;
+}
+
+:root:not([data-theme=night]) .theme_clock--spin {
+  --clock-from: 32;
+  --clock-to: 64;
+}
+
+@keyframes clock-spin {
+  from {
+    background-position: calc(var(--clock-size) * var(--clock-from) * -1) 0;
+  }
+  to {
+    background-position: calc(var(--clock-size) * var(--clock-to) * -1) 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme_clock--spin {
+    animation: none;
+  }
+}
+@media (width <= 600px) {
+  .theme_clock {
+    --clock-size: 32px;
+  }
+}
+/* THEME-ONLY IMAGES: two <img> per spot, the one for another theme is hidden */
+:root[data-theme=night] .theme_only--sky,
+:root:not([data-theme=night]) .theme_only--night {
+  display: none;
 }
 
 /*# sourceMappingURL=home.css.map */

@@ -16,6 +16,7 @@
 
 
 <body>
+    <button type="button" class="theme_clock" data-theme-clock aria-label="switch theme" title="switch theme"></button>
     <!-- CHAINS -->
     <div class="chains">
         <!-- <img src="/_src/img/deco/chains.png"> -->
@@ -105,14 +106,16 @@
                         <button type="button" class="tabs--tab" data-tab="panel-about">about me</button>
                         <button type="button" class="tabs--tab" data-tab="codeofhonor">code of honor</button>
                     </div>
-                    <img class="header--logo" src="/_src/img/deco/l0r3z1-small.png" alt="L0R3Z">
+                    <img class="header--logo theme_only--sky" src="/_src/img/deco/l0r3z1-small.png" alt="L0R3Z">
+                    <img class="header--logo theme_only--night" src="/_src/img/deco/l0r3z1-small.png" alt="L0R3Z" loading="lazy">
                 </div>
                 <!-- INTRODUCTION -->
                 <div class="box introduction--container">
                     <div class="tabpanels">
                         <div class="tabpanel" id="panel-where">
                             <div class="where_am_i">
-                                <img class="mecat float" src="/_src/img/deco/mecat/mecat-small.png" alt="silly guy">
+                                <img class="mecat float theme_only--sky" src="/_src/img/deco/mecat/mecat-small.png" alt="silly guy">
+                                <img class="mecat float theme_only--night" src="/_src/img/deco/mecat/mecat-small.png" alt="silly guy" loading="lazy">
                                 <div class="where_am_i--text">
                                     <h2>WHERE AM I?</h2>
                                     <p>hello and welcome to <a href="/home">l0r3z.net</a>! i'm <strong
@@ -482,11 +485,6 @@
         </aside>
         <aside id="legal">
             <p style="text-align: center; font-size: 80%;">L0R3Z 2025 // <span id="site-version">v1.185</span></p>
-        </aside>
-        <aside class="box theme_picker" data-theme-picker>
-            <span class="theme_picker--label">theme:</span>
-            <button type="button" class="theme_picker--option" data-theme-value="sky">sky</button>
-            <button type="button" class="theme_picker--option" data-theme-value="night">night</button>
         </aside>
     </footer>
 

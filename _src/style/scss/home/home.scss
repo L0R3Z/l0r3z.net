@@ -736,41 +736,6 @@ footer {
         height: 1em;
     }
 
-    .theme_picker {
-        margin-top: 0.4em;
-        padding: 0.3em 0.6em;
-        display: flex;
-        align-items: center;
-        gap: 0.5em;
-        font-size: 0.6em;
-
-        &--label {
-            color: var(--theme--color--text--basic);
-        }
-
-        &--option {
-            font: inherit;
-            color: var(--theme--color--text--basic);
-            background: none;
-            border: 1px solid var(--theme--color--box--border);
-            padding: 0.1em 0.5em;
-            cursor: pointer;
-            opacity: 60%;
-            transition: opacity 0.3s;
-
-            &:hover,
-            &:focus-visible {
-                opacity: 90%;
-            }
-
-            &--active {
-                opacity: 100%;
-                color: var(--theme--color--text--highlighted);
-                border-color: var(--theme--color--text--highlighted);
-            }
-        }
-    }
-
     #legal {
         color: var(--theme--home--legal--text);
         text-shadow: var(--theme--home--legal--shadow);
@@ -781,4 +746,78 @@ footer {
     .listening_to {
         display: none;
     }
+}
+/* THEME CLOCK */
+// 64-frame Minecraft clock sprite (16px frames, shown 3x): frame 0 = day (sky), frame 32 = night.
+.theme_clock {
+    --clock-size: 48px;
+    --clock-from: 0;
+    --clock-to: 0;
+
+    position: fixed;
+    top: 0.8em;
+    right: 0.8em;
+    z-index: 100;
+    width: var(--clock-size);
+    height: var(--clock-size);
+    padding: 0;
+    border: 0;
+    background: url("/_src/img/deco/theme_clock.png") 0 0 / calc(var(--clock-size) * 64) var(--clock-size) no-repeat;
+    image-rendering: pixelated;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+    transition: transform 0.2s;
+
+    &:hover,
+    &:focus-visible {
+        transform: scale(1.12) rotate(-6deg);
+    }
+
+    &--spin {
+        animation: clock-spin 0.8s steps(32);
+    }
+}
+
+:root[data-theme="night"] .theme_clock {
+    background-position: calc(var(--clock-size) * -32) 0;
+
+    // spinning towards night: frames 0 -> 32
+    &.theme_clock--spin {
+        --clock-from: 0;
+        --clock-to: 32;
+    }
+}
+
+:root:not([data-theme="night"]) .theme_clock--spin {
+    // spinning back towards day: frames 32 -> 64 (64 = frame 0 again)
+    --clock-from: 32;
+    --clock-to: 64;
+}
+
+@keyframes clock-spin {
+    from {
+        background-position: calc(var(--clock-size) * var(--clock-from) * -1) 0;
+    }
+
+    to {
+        background-position: calc(var(--clock-size) * var(--clock-to) * -1) 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme_clock--spin {
+        animation: none;
+    }
+}
+
+@media (width <= 600px) {
+    .theme_clock {
+        --clock-size: 32px;
+    }
+}
+
+/* THEME-ONLY IMAGES: two <img> per spot, the one for another theme is hidden */
+:root[data-theme="night"] .theme_only--sky,
+:root:not([data-theme="night"]) .theme_only--night {
+    display: none;
 }
