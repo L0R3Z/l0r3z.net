@@ -2,6 +2,13 @@
 
 > see dates on github
 
+## 1.18.8
+- new! night mode for the homepage :3 switch it with the lil minecraft clock top right (it remembers ur pick)
+- bye bye jquery, all the js got cleaned up into proper modules
+- listening to widget: better error state + plain text names
+- music visualizer actually stops when you pause now, audio player button fixed too
+- links + images get checked before deploying, broken stuff = no deploy
+
 ## 1.18.5
 - dev-tooling upgrade => package.json, pre-commit git hook that recompiles SCSS to CSS automatically before every commit for convenience, code linter for js and scss
 - some code cleanup (horrible commit diff lol)
